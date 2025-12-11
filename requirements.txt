@@ -4,6 +4,7 @@ aiohappyeyeballs==2.6.1
 aiohttp==3.13.2
 aiosignal==1.4.0
 anyio==4.12.0
+attrdict==2.0.1
 attrs==25.4.0
 beautifulsoup4==4.14.3
 bitsandbytes==0.48.2
@@ -11,11 +12,12 @@ certifi==2025.11.12
 charset-normalizer==3.4.4
 cut-cross-entropy==25.1.1
 datasets==4.3.0
-deepseek-vl==0.0.1.dev0
+deepseek_vl @ git+https://github.com/deepseek-ai/DeepSeek-VL.git@681bffb4519856ad27cc17531aacde31ddf6f1a7
 diffusers==0.35.2
 dill==0.4.0
 docstring_parser==0.17.0
 editdistance==0.8.1
+einops==0.8.1
 filelock==3.20.0
 frozenlist==1.8.0
 fsspec==2025.9.0
@@ -80,6 +82,7 @@ soupsieve==2.8
 sympy==1.14.0
 tensorboard==2.20.0
 tensorboard-data-server==0.7.2
+timm==1.0.22
 tokenizers==0.22.1
 torch==2.9.1
 torchao==0.14.1
