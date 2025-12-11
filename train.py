@@ -9,13 +9,14 @@ import argparse
 import inspect
 import importlib
 import pkgutil
+import sys
 from torch.utils.data import Dataset
-from transformers import TrainingArguments, Trainer, BitsAndBytesConfig
+from transformers import TrainingArguments, Trainer, BitsAndBytesConfig, AutoProcessor, AutoModelForCausalLM
 from deepseek_vl.utils.io import load_pil_images
 from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
 
 # ---------------------------
-# 1. DYNAMIC DISCOVERY UTILS (FIXED)
+# 1. DYNAMIC DISCOVERY UTILS
 # ---------------------------
 def find_class_in_package(package_name, substring_match):
     """Scans a package to find a class name containing the substring."""
@@ -23,17 +24,14 @@ def find_class_in_package(package_name, substring_match):
     found_classes = []
     try:
         pkg = importlib.import_module(package_name)
-        # Walk through modules in the package
         if hasattr(pkg, "__path__"):
             for _, name, _ in pkgutil.walk_packages(pkg.__path__, pkg.__name__ + "."):
                 try:
                     mod = importlib.import_module(name)
                     for cls_name, cls_obj in inspect.getmembers(mod):
                         if inspect.isclass(cls_obj) and substring_match in cls_name:
-                            # --- FILTER OUT IRRELEVANT CLASSES ---
-                            if "PreTrained" in cls_name or "Config" in cls_name:
-                                continue
-                            if "Output" in cls_name: # <--- FIX: Exclude output containers
+                            # --- FILTERS ---
+                            if any(x in cls_name for x in ["PreTrained", "Config", "Output", "AutoModel", "BaseImage"]):
                                 continue
                             found_classes.append(cls_obj)
                 except Exception:
@@ -42,16 +40,8 @@ def find_class_in_package(package_name, substring_match):
         print(f"    Scan error: {e}")
     
     if found_classes:
-        # Sort by relevance: Prefer classes ending with the match (e.g., 'Processor')
-        def score_class(cls):
-            name = cls.__name__
-            score = 0
-            if name.endswith(substring_match):
-                score += 100
-            score += len(name) # Secondary sort by length
-            return score
-
-        best_match = sorted(list(set(found_classes)), key=score_class, reverse=True)[0]
+        # Prefer exact match or shortest relevant name
+        best_match = sorted(list(set(found_classes)), key=lambda x: len(x.__name__), reverse=True)[0]
         print(f"    FOUND: {best_match.__name__}")
         return best_match
     return None
@@ -61,22 +51,26 @@ def find_class_in_package(package_name, substring_match):
 # ---------------------------
 def load_components(model_path):
     # --- FIND PROCESSOR ---
-    ProcessorClass = find_class_in_package("deepseek_vl.models", "Processor")
+    ProcessorClass = find_class_in_package("deepseek_vl.models", "VLChatProcessor")
+    if not ProcessorClass:
+        ProcessorClass = find_class_in_package("deepseek_vl.models", "Processor")
     
     if ProcessorClass:
         print(f">>> Using Processor: {ProcessorClass.__name__}")
         processor = ProcessorClass.from_pretrained(model_path, trust_remote_code=True)
     else:
         print(">>> WARNING: Official Processor not found. Using AutoProcessor.")
-        from transformers import AutoProcessor
         processor = AutoProcessor.from_pretrained(model_path, trust_remote_code=True)
 
     # --- FIND MODEL CLASS ---
-    ModelClass = find_class_in_package("deepseek_vl.models", "ForCausalLM")
+    ModelClass = find_class_in_package("deepseek_vl.models", "MultiModality")
     
     if ModelClass is None:
-        print(">>> WARNING: Official Model Class not found. Using AutoModelForCausalLM.")
-        from transformers import AutoModelForCausalLM
+        print(">>> CRITICAL WARNING: 'MultiModality' class not found. Trying 'ForCausalLM'.")
+        ModelClass = find_class_in_package("deepseek_vl.models", "ForCausalLM")
+
+    if ModelClass is None:
+        print(">>> FALLBACK: Using AutoModelForCausalLM.")
         ModelClass = AutoModelForCausalLM
     else:
         print(f">>> Using Model Class: {ModelClass.__name__}")
@@ -96,6 +90,8 @@ def parse_args():
     parser.add_argument("--local", action="store_true", help="Low memory mode")
     parser.add_argument("--epochs", type=int, default=3)
     parser.add_argument("--batch_size", type=int, default=1)
+    if "ipykernel" in sys.modules:
+        return parser.parse_args([])
     return parser.parse_args()
 
 # ---------------------------
@@ -118,7 +114,6 @@ class DeepSeekOCRDataset(Dataset):
         ]
         pil_images = load_pil_images(conversation)
         
-        # Invoke processor
         outputs = self.processor(
             conversations=conversation,
             images=pil_images,
@@ -155,11 +150,8 @@ def collate_fn(batch):
 # ---------------------------
 def train():
     args = parse_args()
-    
-    # 1. Load Components Dynamically
     processor, ModelClass = load_components(MODEL_PATH)
 
-    # 2. Config Settings
     supports_bf16 = torch.cuda.is_available() and torch.cuda.is_bf16_supported()
     
     if args.local:
@@ -169,7 +161,6 @@ def train():
         use_fp16 = True
         lora_rank = 8
         lora_targets = ["q_proj", "v_proj"]
-        num_workers = 0
     else:
         print(f">>> MODE: COLAB (Performance) | BF16: {supports_bf16}")
         optimizer = "adamw_torch"
@@ -177,7 +168,6 @@ def train():
         use_fp16 = not supports_bf16
         lora_rank = 16
         lora_targets = ["q_proj", "v_proj", "k_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
-        num_workers = 0 
 
     if torch.cuda.is_available():
         torch.cuda.empty_cache()
@@ -190,7 +180,6 @@ def train():
         bnb_4bit_use_double_quant=True,
     )
 
-    # Load using the Specific Class (bypassing AutoModel ambiguity)
     model = ModelClass.from_pretrained(
         MODEL_PATH,
         quantization_config=bnb_config,
@@ -199,35 +188,43 @@ def train():
     )
 
     # ---------------------------------------------------------
-    # MONKEY PATCHES (Safety Net)
+    # MANDATORY MONKEY PATCHES
     # ---------------------------------------------------------
+    print(">>> Applying Mandatory Monkey Patches for DeepSeek VL...")
+
+    # 1. EXPLICIT FORWARD BINDING (Fixes _forward_unimplemented)
+    if hasattr(ModelClass, "forward"):
+        print(f">>> Binding {ModelClass.__name__}.forward to model instance...")
+        # We force the instance to use the CLASS method
+        model.forward = types.MethodType(ModelClass.forward, model)
+    else:
+        print(">>> WARNING: ModelClass has no forward method. Trying fallback...")
+    
+    # 2. Patch get_input_embeddings (Required for PEFT)
     def get_input_embeddings(self):
         return self.language_model.get_input_embeddings()
+    model.get_input_embeddings = types.MethodType(get_input_embeddings, model)
+
+    # 3. Patch Gradient Checkpointing
     def gradient_checkpointing_enable(self, gradient_checkpointing_kwargs=None):
         self.language_model.gradient_checkpointing_enable(gradient_checkpointing_kwargs=gradient_checkpointing_kwargs)
+
     def gradient_checkpointing_disable(self):
         self.language_model.gradient_checkpointing_disable()
-    def prepare_inputs_for_generation(self, *args, **kwargs):
-        return self.language_model.prepare_inputs_for_generation(*args, **kwargs)
-
-    if not hasattr(model, "get_input_embeddings"):
-        model.get_input_embeddings = types.MethodType(get_input_embeddings, model)
-    
-    # Overwrite these regardless to ensure they hit the language model
+        
     model.gradient_checkpointing_enable = types.MethodType(gradient_checkpointing_enable, model)
     model.gradient_checkpointing_disable = types.MethodType(gradient_checkpointing_disable, model)
-    model.prepare_inputs_for_generation = types.MethodType(prepare_inputs_for_generation, model)
+
+    # 4. Patch Inputs for Generation
+    def prepare_inputs_for_generation(self, *args, **kwargs):
+        return self.language_model.prepare_inputs_for_generation(*args, **kwargs)
     
-    # CRITICAL FIX: Ensure forward is visible if wrapped strangely
-    if not hasattr(model, "forward"):
-        print(">>> WARNING: 'forward' method missing on model object. Attempting to link to language_model...")
-        def forward_patch(self, *args, **kwargs):
-             return self.language_model(*args, **kwargs)
-        model.forward = types.MethodType(forward_patch, model)
+    model.prepare_inputs_for_generation = types.MethodType(prepare_inputs_for_generation, model)
     # ---------------------------------------------------------
 
     print(">>> Preparing PEFT...")
     model = prepare_model_for_kbit_training(model)
+    
     peft_config = LoraConfig(
         r=lora_rank,
         lora_alpha=lora_rank*2,
@@ -239,7 +236,6 @@ def train():
     model = get_peft_model(model, peft_config)
     model.print_trainable_parameters()
 
-    # 6. Datasets & Trainer
     train_dataset = DeepSeekOCRDataset(TRAIN_DATA, processor)
     val_dataset = DeepSeekOCRDataset(VAL_DATA, processor)
 
@@ -255,7 +251,7 @@ def train():
         logging_steps=5,
         save_strategy="epoch",
         report_to="none",
-        dataloader_num_workers=num_workers,
+        dataloader_num_workers=0,
         gradient_checkpointing=True,
         optim=optimizer,
         remove_unused_columns=False 
