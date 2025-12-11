@@ -1,7 +1,7 @@
 import os
 # --- MEMORY OPTIMIZATION ENV VARS ---
-# Helps prevent fragmentation on both Colab and Local
-os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
+# Using the newer variable name to avoid warnings
+os.environ["PYTORCH_ALLOC_CONF"] = "expandable_segments:True"
 
 import torch
 import json
@@ -99,7 +99,6 @@ def train():
     args = parse_args()
     
     # --- AUTO-DETECT BF16 SUPPORT ---
-    # Colab T4 GPUs = False. A100 GPUs = True.
     supports_bf16 = torch.cuda.is_available() and torch.cuda.is_bf16_supported()
 
     # --- PROFILE SETTINGS ---
@@ -116,19 +115,16 @@ def train():
     else:
         print(f">>> MODE: COLAB / SERVER (Performance) | BF16 Support: {supports_bf16}")
         lora_rank = 16
-        # Target all linear layers for better accuracy
         lora_targets = ["q_proj", "v_proj", "k_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
         optimizer = "adamw_torch"
         grad_accum = 16
         
-        # FIX: Automatically use correct precision based on hardware
         use_bf16 = supports_bf16            
         use_fp16 = not supports_bf16        
         
         eval_strat = "epoch"
         num_workers = 2
 
-    # Clear cache
     if torch.cuda.is_available():
         torch.cuda.empty_cache()
 
@@ -151,7 +147,7 @@ def train():
     )
 
     # ---------------------------------------------------------
-    # MONKEY PATCH (Required for both modes)
+    # MONKEY PATCHES (FIX FOR DEEPSEEK WRAPPER ISSUES)
     # ---------------------------------------------------------
     def get_input_embeddings(self):
         return self.language_model.get_input_embeddings()
@@ -161,10 +157,15 @@ def train():
 
     def gradient_checkpointing_disable(self):
         self.language_model.gradient_checkpointing_disable()
+    
+    # --- NEW PATCH: prepare_inputs_for_generation ---
+    def prepare_inputs_for_generation(self, *args, **kwargs):
+        return self.language_model.prepare_inputs_for_generation(*args, **kwargs)
 
     model.get_input_embeddings = types.MethodType(get_input_embeddings, model)
     model.gradient_checkpointing_enable = types.MethodType(gradient_checkpointing_enable, model)
     model.gradient_checkpointing_disable = types.MethodType(gradient_checkpointing_disable, model)
+    model.prepare_inputs_for_generation = types.MethodType(prepare_inputs_for_generation, model)
     # ---------------------------------------------------------
 
     print(">>> Preparing Model for k-bit training...")
