@@ -1,36 +1,105 @@
 import os
-# --- MEMORY OPTIMIZATION ENV VARS ---
-# Using the newer variable name to avoid warnings
+# --- MEMORY OPTIMIZATION ---
 os.environ["PYTORCH_ALLOC_CONF"] = "expandable_segments:True"
 
 import torch
 import json
 import types
 import argparse
+import inspect
+import importlib
+import pkgutil
 from torch.utils.data import Dataset
 from transformers import TrainingArguments, Trainer, BitsAndBytesConfig
-from transformers import AutoModelForCausalLM, AutoProcessor
 from deepseek_vl.utils.io import load_pil_images
 from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
 
 # ---------------------------
-# CONFIGURATION & ARGS
+# 1. DYNAMIC DISCOVERY UTILS (FIXED)
 # ---------------------------
-def parse_args():
-    parser = argparse.ArgumentParser(description="Fine-tune DeepSeek-VL for OCR")
-    parser.add_argument("--local", action="store_true", help="Enable ultra-low memory mode for local 4GB GPU")
-    parser.add_argument("--epochs", type=int, default=3, help="Number of training epochs")
-    parser.add_argument("--batch_size", type=int, default=1, help="Batch size per device")
-    return parser.parse_args()
+def find_class_in_package(package_name, substring_match):
+    """Scans a package to find a class name containing the substring."""
+    print(f">>> Scanning {package_name} for class matching '{substring_match}'...")
+    found_classes = []
+    try:
+        pkg = importlib.import_module(package_name)
+        # Walk through modules in the package
+        if hasattr(pkg, "__path__"):
+            for _, name, _ in pkgutil.walk_packages(pkg.__path__, pkg.__name__ + "."):
+                try:
+                    mod = importlib.import_module(name)
+                    for cls_name, cls_obj in inspect.getmembers(mod):
+                        if inspect.isclass(cls_obj) and substring_match in cls_name:
+                            # --- FILTER OUT IRRELEVANT CLASSES ---
+                            if "PreTrained" in cls_name or "Config" in cls_name:
+                                continue
+                            if "Output" in cls_name: # <--- FIX: Exclude output containers
+                                continue
+                            found_classes.append(cls_obj)
+                except Exception:
+                    continue
+    except Exception as e:
+        print(f"    Scan error: {e}")
+    
+    if found_classes:
+        # Sort by relevance: Prefer classes ending with the match (e.g., 'Processor')
+        def score_class(cls):
+            name = cls.__name__
+            score = 0
+            if name.endswith(substring_match):
+                score += 100
+            score += len(name) # Secondary sort by length
+            return score
 
-# Global Constants
+        best_match = sorted(list(set(found_classes)), key=score_class, reverse=True)[0]
+        print(f"    FOUND: {best_match.__name__}")
+        return best_match
+    return None
+
+# ---------------------------
+# 2. LOADERS
+# ---------------------------
+def load_components(model_path):
+    # --- FIND PROCESSOR ---
+    ProcessorClass = find_class_in_package("deepseek_vl.models", "Processor")
+    
+    if ProcessorClass:
+        print(f">>> Using Processor: {ProcessorClass.__name__}")
+        processor = ProcessorClass.from_pretrained(model_path, trust_remote_code=True)
+    else:
+        print(">>> WARNING: Official Processor not found. Using AutoProcessor.")
+        from transformers import AutoProcessor
+        processor = AutoProcessor.from_pretrained(model_path, trust_remote_code=True)
+
+    # --- FIND MODEL CLASS ---
+    ModelClass = find_class_in_package("deepseek_vl.models", "ForCausalLM")
+    
+    if ModelClass is None:
+        print(">>> WARNING: Official Model Class not found. Using AutoModelForCausalLM.")
+        from transformers import AutoModelForCausalLM
+        ModelClass = AutoModelForCausalLM
+    else:
+        print(f">>> Using Model Class: {ModelClass.__name__}")
+
+    return processor, ModelClass
+
+# ---------------------------
+# CONFIGURATION
+# ---------------------------
 MODEL_PATH = "deepseek-ai/deepseek-vl-1.3b-chat"
 TRAIN_DATA = "dataset/deepseek_train.json"
 VAL_DATA = "dataset/deepseek_val.json"
 OUTPUT_DIR = "checkpoints/deepseek_ocr_lora"
 
+def parse_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--local", action="store_true", help="Low memory mode")
+    parser.add_argument("--epochs", type=int, default=3)
+    parser.add_argument("--batch_size", type=int, default=1)
+    return parser.parse_args()
+
 # ---------------------------
-# DATASET CLASS
+# DATASET
 # ---------------------------
 class DeepSeekOCRDataset(Dataset):
     def __init__(self, json_path, processor):
@@ -43,22 +112,14 @@ class DeepSeekOCRDataset(Dataset):
 
     def __getitem__(self, idx):
         item = self.data[idx]
-        
         conversation = [
-            {
-                "role": "User",
-                "content": item['conversations'][0]['content'],
-                "images": item['images'] 
-            },
-            {
-                "role": "Assistant",
-                "content": item['conversations'][1]['content']
-            }
+            {"role": "User", "content": item['conversations'][0]['content'], "images": item['images']},
+            {"role": "Assistant", "content": item['conversations'][1]['content']}
         ]
-        
         pil_images = load_pil_images(conversation)
         
-        prepare_inputs = self.processor(
+        # Invoke processor
+        outputs = self.processor(
             conversations=conversation,
             images=pil_images,
             force_batchify=True,
@@ -66,15 +127,12 @@ class DeepSeekOCRDataset(Dataset):
         )
         
         return {
-            "input_ids": prepare_inputs.input_ids.squeeze(0),
-            "attention_mask": prepare_inputs.attention_mask.squeeze(0),
-            "images": prepare_inputs.pixel_values.squeeze(0),
-            "labels": prepare_inputs.input_ids.squeeze(0)
+            "input_ids": outputs.input_ids.squeeze(0),
+            "attention_mask": outputs.attention_mask.squeeze(0),
+            "images": outputs.pixel_values.squeeze(0),
+            "labels": outputs.input_ids.squeeze(0)
         }
 
-# ---------------------------
-# DATA COLLATOR
-# ---------------------------
 def collate_fn(batch):
     images = torch.stack([x['images'] for x in batch])
     input_ids = [x['input_ids'] for x in batch]
@@ -93,45 +151,38 @@ def collate_fn(batch):
     }
 
 # ---------------------------
-# MAIN TRAINING LOOP
+# TRAINING LOOP
 # ---------------------------
 def train():
     args = parse_args()
     
-    # --- AUTO-DETECT BF16 SUPPORT ---
-    supports_bf16 = torch.cuda.is_available() and torch.cuda.is_bf16_supported()
+    # 1. Load Components Dynamically
+    processor, ModelClass = load_components(MODEL_PATH)
 
-    # --- PROFILE SETTINGS ---
+    # 2. Config Settings
+    supports_bf16 = torch.cuda.is_available() and torch.cuda.is_bf16_supported()
+    
     if args.local:
-        print(">>> MODE: LOCAL (Low Memory Optimization)")
-        lora_rank = 8
-        lora_targets = ["q_proj", "v_proj"] 
-        optimizer = "paged_adamw_8bit"      
-        grad_accum = 8
-        use_bf16 = False                    
+        print(">>> MODE: LOCAL (Low Memory)")
+        optimizer = "paged_adamw_8bit"
+        use_bf16 = False
         use_fp16 = True
-        eval_strat = "no"                   
-        num_workers = 0                     
+        lora_rank = 8
+        lora_targets = ["q_proj", "v_proj"]
+        num_workers = 0
     else:
-        print(f">>> MODE: COLAB / SERVER (Performance) | BF16 Support: {supports_bf16}")
+        print(f">>> MODE: COLAB (Performance) | BF16: {supports_bf16}")
+        optimizer = "adamw_torch"
+        use_bf16 = supports_bf16
+        use_fp16 = not supports_bf16
         lora_rank = 16
         lora_targets = ["q_proj", "v_proj", "k_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
-        optimizer = "adamw_torch"
-        grad_accum = 16
-        
-        use_bf16 = supports_bf16            
-        use_fp16 = not supports_bf16        
-        
-        eval_strat = "epoch"
-        num_workers = 2
+        num_workers = 0 
 
     if torch.cuda.is_available():
         torch.cuda.empty_cache()
 
-    print(">>> Loading Processor...")
-    processor = AutoProcessor.from_pretrained(MODEL_PATH, trust_remote_code=True)
-
-    print(">>> Loading Model (4-bit)...")
+    print(">>> Loading Model...")
     bnb_config = BitsAndBytesConfig(
         load_in_4bit=True,
         bnb_4bit_quant_type="nf4",
@@ -139,7 +190,8 @@ def train():
         bnb_4bit_use_double_quant=True,
     )
 
-    model = AutoModelForCausalLM.from_pretrained(
+    # Load using the Specific Class (bypassing AutoModel ambiguity)
+    model = ModelClass.from_pretrained(
         MODEL_PATH,
         quantization_config=bnb_config,
         trust_remote_code=True,
@@ -147,33 +199,38 @@ def train():
     )
 
     # ---------------------------------------------------------
-    # MONKEY PATCHES (FIX FOR DEEPSEEK WRAPPER ISSUES)
+    # MONKEY PATCHES (Safety Net)
     # ---------------------------------------------------------
     def get_input_embeddings(self):
         return self.language_model.get_input_embeddings()
-
     def gradient_checkpointing_enable(self, gradient_checkpointing_kwargs=None):
         self.language_model.gradient_checkpointing_enable(gradient_checkpointing_kwargs=gradient_checkpointing_kwargs)
-
     def gradient_checkpointing_disable(self):
         self.language_model.gradient_checkpointing_disable()
-    
-    # --- NEW PATCH: prepare_inputs_for_generation ---
     def prepare_inputs_for_generation(self, *args, **kwargs):
         return self.language_model.prepare_inputs_for_generation(*args, **kwargs)
 
-    model.get_input_embeddings = types.MethodType(get_input_embeddings, model)
+    if not hasattr(model, "get_input_embeddings"):
+        model.get_input_embeddings = types.MethodType(get_input_embeddings, model)
+    
+    # Overwrite these regardless to ensure they hit the language model
     model.gradient_checkpointing_enable = types.MethodType(gradient_checkpointing_enable, model)
     model.gradient_checkpointing_disable = types.MethodType(gradient_checkpointing_disable, model)
     model.prepare_inputs_for_generation = types.MethodType(prepare_inputs_for_generation, model)
+    
+    # CRITICAL FIX: Ensure forward is visible if wrapped strangely
+    if not hasattr(model, "forward"):
+        print(">>> WARNING: 'forward' method missing on model object. Attempting to link to language_model...")
+        def forward_patch(self, *args, **kwargs):
+             return self.language_model(*args, **kwargs)
+        model.forward = types.MethodType(forward_patch, model)
     # ---------------------------------------------------------
 
-    print(">>> Preparing Model for k-bit training...")
+    print(">>> Preparing PEFT...")
     model = prepare_model_for_kbit_training(model)
-    
     peft_config = LoraConfig(
         r=lora_rank,
-        lora_alpha=lora_rank * 2,
+        lora_alpha=lora_rank*2,
         target_modules=lora_targets,
         lora_dropout=0.05,
         bias="none",
@@ -182,27 +239,26 @@ def train():
     model = get_peft_model(model, peft_config)
     model.print_trainable_parameters()
 
+    # 6. Datasets & Trainer
     train_dataset = DeepSeekOCRDataset(TRAIN_DATA, processor)
     val_dataset = DeepSeekOCRDataset(VAL_DATA, processor)
 
     training_args = TrainingArguments(
         output_dir=OUTPUT_DIR,
         per_device_train_batch_size=args.batch_size,
-        gradient_accumulation_steps=grad_accum,
+        gradient_accumulation_steps=16,
         per_device_eval_batch_size=args.batch_size,
         num_train_epochs=args.epochs,
         learning_rate=2e-4,
         bf16=use_bf16,
         fp16=use_fp16,
         logging_steps=5,
-        eval_strategy=eval_strat,
         save_strategy="epoch",
-        save_total_limit=1,
-        remove_unused_columns=False,
         report_to="none",
         dataloader_num_workers=num_workers,
         gradient_checkpointing=True,
-        optim=optimizer
+        optim=optimizer,
+        remove_unused_columns=False 
     )
 
     trainer = Trainer(
@@ -216,7 +272,7 @@ def train():
     print(">>> Starting Training...")
     trainer.train()
 
-    print(f">>> Saving Adapter to {OUTPUT_DIR}/final_adapter...")
+    print(">>> Saving...")
     model.save_pretrained(os.path.join(OUTPUT_DIR, "final_adapter"))
     processor.save_pretrained(os.path.join(OUTPUT_DIR, "final_adapter"))
 
