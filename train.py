@@ -1,10 +1,10 @@
 import os
 import torch
 import json
-import types  # <--- Added this import
+import types
 from PIL import Image
 from torch.utils.data import Dataset
-from transformers import TrainingArguments, Trainer, BitsAndBytesConfig # <--- Added BitsAndBytesConfig
+from transformers import TrainingArguments, Trainer, BitsAndBytesConfig
 from transformers import AutoModelForCausalLM, AutoProcessor
 from deepseek_vl.utils.io import load_pil_images
 from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
@@ -95,7 +95,6 @@ def train():
 
     print(">>> Loading Model (4-bit)...")
     
-    # 1. Configuration for 4-bit loading (Fixes the deprecation warning)
     bnb_config = BitsAndBytesConfig(
         load_in_4bit=True,
         bnb_4bit_quant_type="nf4",
@@ -105,22 +104,30 @@ def train():
 
     model = AutoModelForCausalLM.from_pretrained(
         MODEL_PATH,
-        quantization_config=bnb_config, # Use the new config object
+        quantization_config=bnb_config, 
         trust_remote_code=True,
         device_map="auto"
     )
 
     # ---------------------------------------------------------
-    # ### FIX FOR PEFT ERROR: Monkey patch get_input_embeddings
+    # ### FIX FOR PEFT ERROR: Monkey patch missing methods
     # ---------------------------------------------------------
-    # The DeepSeek wrapper hides the language model, so we point 
-    # the function to the internal language model's embedding layer.
+    # We redirect these calls to the internal 'language_model'
     def get_input_embeddings(self):
         return self.language_model.get_input_embeddings()
 
+    def gradient_checkpointing_enable(self, gradient_checkpointing_kwargs=None):
+        self.language_model.gradient_checkpointing_enable(gradient_checkpointing_kwargs=gradient_checkpointing_kwargs)
+
+    def gradient_checkpointing_disable(self):
+        self.language_model.gradient_checkpointing_disable()
+
     model.get_input_embeddings = types.MethodType(get_input_embeddings, model)
+    model.gradient_checkpointing_enable = types.MethodType(gradient_checkpointing_enable, model)
+    model.gradient_checkpointing_disable = types.MethodType(gradient_checkpointing_disable, model)
     # ---------------------------------------------------------
 
+    print(">>> Preparing Model for k-bit training...")
     model = prepare_model_for_kbit_training(model)
     
     # LoRA Config
