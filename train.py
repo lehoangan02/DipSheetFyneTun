@@ -6,34 +6,21 @@ import torch
 import json
 import types
 import argparse
-import inspect
-import importlib
 import sys
+from PIL import Image
 from torch.utils.data import Dataset
-from transformers import TrainingArguments, Trainer, BitsAndBytesConfig, AutoProcessor, AutoModelForCausalLM
-from deepseek_vl.utils.io import load_pil_images
+from torchvision import transforms # <--- NEW: Manual Processing
+from transformers import (
+    TrainingArguments, 
+    Trainer, 
+    BitsAndBytesConfig, 
+    AutoTokenizer, 
+    AutoModelForCausalLM
+)
 from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
 
 # ---------------------------
-# 1. ROBUST DISCOVERY
-# ---------------------------
-def get_processor_and_model(model_path):
-    print(f">>> Loading AutoProcessor for {model_path}...")
-    try:
-        # Trust remote code is essential for DeepSeek
-        processor = AutoProcessor.from_pretrained(model_path, trust_remote_code=True)
-    except Exception as e:
-        print(f"Processor Load Error: {e}. Trying explicit import...")
-        from deepseek_vl.models import VLChatProcessor
-        processor = VLChatProcessor.from_pretrained(model_path)
-
-    print(f">>> Loading Model for {model_path}...")
-    # We use AutoModel. The magic happens in the patching later.
-    model_class = AutoModelForCausalLM
-    return processor, model_class
-
-# ---------------------------
-# 2. THE CRITICAL PATCH (Bring Your Own Forward)
+# 1. HARDCODED FORWARD PATCH
 # ---------------------------
 def deepseek_vl_forward(
     self,
@@ -44,44 +31,40 @@ def deepseek_vl_forward(
     **kwargs
 ):
     """
-    Explicit forward function injected into the model.
-    Handles embedding images and merging with text embeddings before passing to LLM.
+    Manually defined forward pass for DeepSeek VL.
     """
-    # 1. Access submodules (assuming standard DeepSeek structure)
     vision_model = self.vision_model
     aligner = self.aligner
     language_model = self.language_model
     
-    # 2. Process Images (if present)
+    # 1. Process Images
     if images is not None and len(images.shape) > 1:
-        # images shape: [batch, num_images, 3, H, W] or [batch, 3, H, W]
+        # Check if we have batch dimension [B, N, C, H, W] or just [B, C, H, W]
+        # DeepSeek often expects [B, N, C, H, W] where N=1 for single image
+        if images.dim() == 4:
+            images = images.unsqueeze(1) # Add 'N' dim
+
         if images.dim() == 5:
             b, n, c, h, w = images.shape
+            # Flatten B*N for the vision encoder
             images = images.view(b * n, c, h, w)
         
-        # Get Visual Features
-        pixel_values = images
-        # vision_model output is object with .last_hidden_state or direct tensor
-        v_out = vision_model(pixel_values)
+        # Extract features
+        v_out = vision_model(images)
         if hasattr(v_out, "last_hidden_state"):
             v_embeds = v_out.last_hidden_state
         else:
             v_embeds = v_out
-            
-        # Align to LLM dimension
+        
+        # Project to LLM space
         v_embeds = aligner(v_embeds) 
     else:
         v_embeds = None
 
-    # 3. Get Text Embeddings
+    # 2. Process Text
     inputs_embeds = language_model.get_input_embeddings()(input_ids)
 
-    # 4. Merge Embeddings (The tricky part: replacing placeholder tokens)
-    # DeepSeek uses a specific token ID for images. 
-    # Usually handled by the prepare_inputs_embeds inside the model, 
-    # but since we are patching, we delegate to the internal helper if it exists.
-    
-    # If the model has the standard helper, use it:
+    # 3. Merge (Simplified Strategy)
     if hasattr(self, "prepare_inputs_embeds"):
         inputs_embeds = self.prepare_inputs_embeds(
             input_ids=input_ids,
@@ -89,14 +72,8 @@ def deepseek_vl_forward(
             images_seq_mask=kwargs.get("images_seq_mask"),
             images_spatial_crop=kwargs.get("images_spatial_crop")
         )
-    else:
-        # MANUAL MERGE FALLBACK (Simplified for stability)
-        # If we can't do complex merge, we just run text.
-        # This prevents crash but effectively ignores images if the helper is missing.
-        # Most DeepSeek implementations loaded via remote code WILL have prepare_inputs_embeds.
-        pass 
-
-    # 5. Pass to Language Model
+    
+    # 4. Forward LLM
     return language_model(
         inputs_embeds=inputs_embeds,
         attention_mask=attention_mask,
@@ -122,48 +99,78 @@ def parse_args():
     return parser.parse_args()
 
 # ---------------------------
-# DATASET
+# DATASET (MANUAL TRANSFORMS)
 # ---------------------------
 class DeepSeekOCRDataset(Dataset):
-    def __init__(self, json_path, processor):
+    def __init__(self, json_path, tokenizer):
         with open(json_path, 'r', encoding='utf-8') as f:
             self.data = json.load(f)
-        self.processor = processor
+        self.tokenizer = tokenizer
+        
+        if self.tokenizer.pad_token is None:
+            self.tokenizer.pad_token = self.tokenizer.eos_token
+
+        # --- MANUAL IMAGE TRANSFORM (Replaces AutoImageProcessor) ---
+        # Standard DeepSeek / CLIP Normalization
+        self.transform = transforms.Compose([
+            transforms.Resize((384, 384)), # Fixed size for 1.3b model stability
+            transforms.ToTensor(),
+            transforms.Normalize(
+                mean=[0.48145466, 0.4578275, 0.40821073],
+                std=[0.26862954, 0.26130258, 0.27577711]
+            )
+        ])
+        # ------------------------------------------------------------
 
     def __len__(self):
         return len(self.data)
 
     def __getitem__(self, idx):
         item = self.data[idx]
-        conversation = [
-            {"role": "User", "content": item['conversations'][0]['content'], "images": item['images']},
-            {"role": "Assistant", "content": item['conversations'][1]['content']}
-        ]
-        pil_images = load_pil_images(conversation)
+        user_content = item['conversations'][0]['content']
+        assistant_content = item['conversations'][1]['content']
+        image_path = item['images'][0]
         
-        outputs = self.processor(
-            conversations=conversation,
-            images=pil_images,
-            force_batchify=True,
-            system_prompt=""
+        # 1. Load & Transform Image
+        try:
+            image = Image.open(image_path).convert("RGB")
+            # Apply Manual Transform
+            pixel_values = self.transform(image)
+        except Exception as e:
+            print(f"Error loading image {image_path}: {e}")
+            pixel_values = torch.zeros((3, 384, 384))
+
+        # 2. Format Prompt
+        # Simplified manual formatting that works with tokenizer
+        prompt = f"User: <image_placeholder> {user_content}\n\nAssistant: {assistant_content}<｜end of sentence｜>"
+
+        # 3. Tokenize
+        token_out = self.tokenizer(
+            prompt,
+            return_tensors="pt",
+            max_length=512,
+            truncation=True,
+            padding="max_length"
         )
         
+        input_ids = token_out.input_ids.squeeze(0)
+        attention_mask = token_out.attention_mask.squeeze(0)
+        
+        labels = input_ids.clone()
+        labels[attention_mask == 0] = -100
+
         return {
-            "input_ids": outputs.input_ids.squeeze(0),
-            "attention_mask": outputs.attention_mask.squeeze(0),
-            "images": outputs.pixel_values.squeeze(0),
-            "labels": outputs.input_ids.squeeze(0)
+            "input_ids": input_ids,
+            "attention_mask": attention_mask,
+            "images": pixel_values,
+            "labels": labels
         }
 
 def collate_fn(batch):
     images = torch.stack([x['images'] for x in batch])
-    input_ids = [x['input_ids'] for x in batch]
-    labels = [x['labels'] for x in batch]
-    attention_mask = [x['attention_mask'] for x in batch]
-    
-    input_ids = torch.nn.utils.rnn.pad_sequence(input_ids, batch_first=True, padding_value=0)
-    labels = torch.nn.utils.rnn.pad_sequence(labels, batch_first=True, padding_value=-100)
-    attention_mask = torch.nn.utils.rnn.pad_sequence(attention_mask, batch_first=True, padding_value=0)
+    input_ids = torch.stack([x['input_ids'] for x in batch])
+    attention_mask = torch.stack([x['attention_mask'] for x in batch])
+    labels = torch.stack([x['labels'] for x in batch])
     
     return {
         "input_ids": input_ids,
@@ -177,27 +184,25 @@ def collate_fn(batch):
 # ---------------------------
 def train():
     args = parse_args()
-    processor, ModelClass = get_processor_and_model(MODEL_PATH)
+    
+    # 1. Load Tokenizer Only (We do images manually now)
+    print(">>> Loading Tokenizer...")
+    tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH, trust_remote_code=True)
 
     supports_bf16 = torch.cuda.is_available() and torch.cuda.is_bf16_supported()
     
     if args.local:
-        print(">>> MODE: LOCAL (Low Memory)")
         optimizer = "paged_adamw_8bit"
         use_bf16 = False
         use_fp16 = True
         lora_rank = 8
         lora_targets = ["q_proj", "v_proj"]
     else:
-        print(f">>> MODE: COLAB (Performance) | BF16: {supports_bf16}")
         optimizer = "adamw_torch"
         use_bf16 = supports_bf16
         use_fp16 = not supports_bf16
         lora_rank = 16
         lora_targets = ["q_proj", "v_proj", "k_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
-
-    if torch.cuda.is_available():
-        torch.cuda.empty_cache()
 
     print(">>> Loading Model...")
     bnb_config = BitsAndBytesConfig(
@@ -207,7 +212,7 @@ def train():
         bnb_4bit_use_double_quant=True,
     )
 
-    model = ModelClass.from_pretrained(
+    model = AutoModelForCausalLM.from_pretrained(
         MODEL_PATH,
         quantization_config=bnb_config,
         trust_remote_code=True,
@@ -215,51 +220,27 @@ def train():
     )
 
     # ---------------------------------------------------------
-    # MANDATORY CLASS PATCHING
+    # APPLY PATCHES
     # ---------------------------------------------------------
-    print(">>> Applying Critical Class Patches...")
-
-    # 1. INJECT FORWARD METHOD (The fix for _forward_unimplemented)
-    # We detect if the current forward is missing or broken
-    if not hasattr(model, "forward") or "unimplemented" in str(model.forward).lower():
-        print(">>> CRITICAL: Forward method missing. Injecting custom DeepSeek forward.")
-        model.__class__.forward = deepseek_vl_forward
-    else:
-        # Even if it exists, it might be the generic "BaseModel" one that doesn't handle images.
-        # We check class name. If it's "MultiModalityCausalLM", we trust it.
-        # If it's "PeftModel" or "AutoModel", we inject.
-        cls_name = model.__class__.__name__
-        if "MultiModality" not in cls_name:
-             print(f">>> CRITICAL: Class is '{cls_name}'. Injecting custom DeepSeek forward to support images.")
-             model.__class__.forward = deepseek_vl_forward
-        else:
-             print(">>> Verified: Model class seems correct.")
-
-    # 2. Patch get_input_embeddings (Required for PEFT)
-    def get_input_embeddings(self):
-        return self.language_model.get_input_embeddings()
-    model.__class__.get_input_embeddings = get_input_embeddings
-
-    # 3. Patch Gradient Checkpointing
-    def gradient_checkpointing_enable(self, gradient_checkpointing_kwargs=None):
-        self.language_model.gradient_checkpointing_enable(gradient_checkpointing_kwargs=gradient_checkpointing_kwargs)
-
-    def gradient_checkpointing_disable(self):
-        self.language_model.gradient_checkpointing_disable()
-        
-    model.__class__.gradient_checkpointing_enable = gradient_checkpointing_enable
-    model.__class__.gradient_checkpointing_disable = gradient_checkpointing_disable
-
-    # 4. Patch Inputs for Generation
-    def prepare_inputs_for_generation(self, *args, **kwargs):
-        return self.language_model.prepare_inputs_for_generation(*args, **kwargs)
+    print(">>> Applying Model Patches...")
     
-    model.__class__.prepare_inputs_for_generation = prepare_inputs_for_generation
+    if not hasattr(model, "vision_model") and hasattr(model, "model"):
+         print(">>> Adjusting model structure (unwrapping)...")
+         model = model.model
+
+    # Always inject custom forward to be safe against "unimplemented" errors
+    print(">>> Injecting Custom DeepSeek Forward Method...")
+    model.__class__.forward = deepseek_vl_forward
+
+    # Patch Helper Methods
+    model.__class__.get_input_embeddings = lambda self: self.language_model.get_input_embeddings()
+    model.__class__.gradient_checkpointing_enable = lambda self, **kwargs: self.language_model.gradient_checkpointing_enable(**kwargs)
+    model.__class__.gradient_checkpointing_disable = lambda self: self.language_model.gradient_checkpointing_disable()
+    model.__class__.prepare_inputs_for_generation = lambda self, *args, **kwargs: self.language_model.prepare_inputs_for_generation(*args, **kwargs)
     # ---------------------------------------------------------
 
     print(">>> Preparing PEFT...")
     model = prepare_model_for_kbit_training(model)
-    
     peft_config = LoraConfig(
         r=lora_rank,
         lora_alpha=lora_rank*2,
@@ -271,8 +252,9 @@ def train():
     model = get_peft_model(model, peft_config)
     model.print_trainable_parameters()
 
-    train_dataset = DeepSeekOCRDataset(TRAIN_DATA, processor)
-    val_dataset = DeepSeekOCRDataset(VAL_DATA, processor)
+    # Create Datasets (Passing Tokenizer Only)
+    train_dataset = DeepSeekOCRDataset(TRAIN_DATA, tokenizer)
+    val_dataset = DeepSeekOCRDataset(VAL_DATA, tokenizer)
 
     training_args = TrainingArguments(
         output_dir=OUTPUT_DIR,
@@ -305,7 +287,7 @@ def train():
 
     print(">>> Saving...")
     model.save_pretrained(os.path.join(OUTPUT_DIR, "final_adapter"))
-    processor.save_pretrained(os.path.join(OUTPUT_DIR, "final_adapter"))
+    tokenizer.save_pretrained(os.path.join(OUTPUT_DIR, "final_adapter"))
 
 if __name__ == "__main__":
     train()
