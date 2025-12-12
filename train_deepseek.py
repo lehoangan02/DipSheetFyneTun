@@ -25,8 +25,8 @@ snapshot_download("unsloth/DeepSeek-OCR", local_dir="deepseek_ocr")
 # 3. Load model & tokenizer
 # ------------------------------------------------------------------------
 model, tokenizer = FastVisionModel.from_pretrained(
-    "./deepseek_ocr",
-    load_in_4bit=True,           # Reduce VRAM usage
+    "unsloth/DeepSeek-OCR",
+    load_in_4bit=True,
     auto_model=AutoModel,
     trust_remote_code=True,
     unsloth_force_compile=True,
