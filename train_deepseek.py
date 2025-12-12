@@ -1,9 +1,11 @@
 import os
-from unsloth import FastVisionModel, is_bfloat16_supported
+from unsloth.models.deepseek_ocr import DeepseekOCR
+from transformers import AutoTokenizer
 from unsloth.chat_templates import get_chat_template
 from trl import SFTTrainer, SFTConfig
 from datasets import load_dataset
 from huggingface_hub import snapshot_download
+from unsloth import is_bfloat16_supported
 
 # ------------------------------------------------------------------------
 # 1. Paths & output
@@ -22,14 +24,15 @@ snapshot_download("unsloth/DeepSeek-OCR", local_dir="deepseek_ocr")
 # ------------------------------------------------------------------------
 # 3. Load model & tokenizer
 # ------------------------------------------------------------------------
-# Directly load the patched model without problematic args
-model, tokenizer = FastVisionModel.from_pretrained(
+model = DeepseekOCR.from_pretrained(
     "./deepseek_ocr",
-    load_in_4bit=True,
+    load_in_4bit=True,                  # Reduce VRAM usage
     trust_remote_code=True,
     unsloth_force_compile=True,
     use_gradient_checkpointing="unsloth"
 )
+
+tokenizer = AutoTokenizer.from_pretrained("./deepseek_ocr")
 
 # REQUIRED – set LLaVA chat template
 tokenizer = get_chat_template(tokenizer, chat_template="llava")
@@ -50,7 +53,9 @@ val_dataset   = dataset["val"].map(format_data)
 # ------------------------------------------------------------------------
 # 5. Configure LoRA
 # ------------------------------------------------------------------------
-model = FastVisionModel.get_peft_model(
+from unsloth.models.vision import get_peft_model
+
+model = get_peft_model(
     model,
     finetune_vision_layers=True,
     finetune_language_layers=True,
@@ -71,7 +76,7 @@ trainer = SFTTrainer(
     tokenizer=tokenizer,
     train_dataset=train_dataset,
     eval_dataset=val_dataset,
-    dataset_text_field=None,
+    dataset_text_field=None,  # Required for vision inputs
     max_seq_length=4096,
     dataset_num_proc=2,
     args=SFTConfig(
