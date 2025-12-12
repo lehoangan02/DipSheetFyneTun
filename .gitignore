@@ -218,3 +218,5 @@ DATA/
 myenv/
 dataset/
 dataset.zip
+/unsloth_compiled_cache
+/deepseek_ocr
