@@ -20,11 +20,11 @@ os.environ["UNSLOTH_WARN_UNINITIALIZED"] = '0'
 snapshot_download("unsloth/DeepSeek-OCR", local_dir="deepseek_ocr")
 
 # ------------------------------------------------------------------------
-# 3. Load model & tokenizer
+# 3. Load model & tokenizer (Unsloth patched loader)
 # ------------------------------------------------------------------------
 model, tokenizer = FastVisionModel.from_pretrained(
     "./deepseek_ocr",
-    load_in_4bit=True,
+    load_in_4bit=False,          # False for 16-bit LoRA
     trust_remote_code=True,
     unsloth_force_compile=True,
     use_gradient_checkpointing="unsloth"
@@ -70,14 +70,14 @@ trainer = SFTTrainer(
     tokenizer=tokenizer,
     train_dataset=train_dataset,
     eval_dataset=val_dataset,
-    dataset_text_field=None,  # Required for vision inputs
-    max_seq_length=4096,      # Supports long context
+    dataset_text_field=None,      # Required for vision inputs
+    max_seq_length=4096,          # Supports long context
     dataset_num_proc=2,
     args=SFTConfig(
         per_device_train_batch_size=2,
         gradient_accumulation_steps=4,
         warmup_steps=5,
-        max_steps=60,               # Adjust for dataset size
+        max_steps=60,
         learning_rate=2e-4,
         fp16=not is_bfloat16_supported(),
         bf16=is_bfloat16_supported(),
