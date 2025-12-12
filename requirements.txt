@@ -71,7 +71,7 @@ torchvision==0.24.1
 tqdm==4.67.1
 transformers==4.57.3
 triton==3.5.1
-trl==0.8.6
+trl==0.24.0
 typeguard==4.4.4
 typing_extensions==4.15.0
 tyro==1.0.1
@@ -80,7 +80,7 @@ unsloth==2025.12.4
 unsloth_zoo==2025.12.3
 urllib3==2.6.2
 wheel==0.45.1
-xformers==0.0.26.post1
+xformers==0.0.33.post2
 xxhash==3.6.0
 yarl==1.22.0
 zipp==3.23.0
