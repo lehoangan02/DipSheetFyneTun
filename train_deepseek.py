@@ -1,10 +1,8 @@
 import os
-import torch
 from unsloth import FastVisionModel, is_bfloat16_supported
 from unsloth.chat_templates import get_chat_template
 from trl import SFTTrainer, SFTConfig
 from datasets import load_dataset
-from transformers import AutoModel
 from huggingface_hub import snapshot_download
 
 # ------------------------------------------------------------------------
@@ -24,14 +22,13 @@ snapshot_download("unsloth/DeepSeek-OCR", local_dir="deepseek_ocr")
 # ------------------------------------------------------------------------
 # 3. Load model & tokenizer
 # ------------------------------------------------------------------------
+# Directly load the patched model without problematic args
 model, tokenizer = FastVisionModel.from_pretrained(
-    "unsloth/DeepSeek-OCR",
+    "./deepseek_ocr",
     load_in_4bit=True,
-    auto_model=AutoModel,
     trust_remote_code=True,
     unsloth_force_compile=True,
-    use_gradient_checkpointing="unsloth",
-    vision_tower_device_map="auto",
+    use_gradient_checkpointing="unsloth"
 )
 
 # REQUIRED – set LLaVA chat template
@@ -74,16 +71,14 @@ trainer = SFTTrainer(
     tokenizer=tokenizer,
     train_dataset=train_dataset,
     eval_dataset=val_dataset,
-
-    dataset_text_field=None,  # Required for vision inputs
-    max_seq_length=4096,      # Supports long context
+    dataset_text_field=None,
+    max_seq_length=4096,
     dataset_num_proc=2,
-
     args=SFTConfig(
         per_device_train_batch_size=2,
         gradient_accumulation_steps=4,
         warmup_steps=5,
-        max_steps=60,               # 60 steps is sufficient for a small dataset
+        max_steps=60,
         learning_rate=2e-4,
         fp16=not is_bfloat16_supported(),
         bf16=is_bfloat16_supported(),
