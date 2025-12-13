@@ -10,14 +10,17 @@ from huggingface_hub import snapshot_download
 # ------------------------------------------------------------------------
 # 1. Configuration
 # ------------------------------------------------------------------------
-TRAIN_FILE = "train.csv"   # Expecting your CSV file here
-VAL_FILE   = "val.csv"     # Expecting your CSV file here
-OUTPUT_DIR = "deepseek_ocr_finetuned"
-IMAGE_ROOT = os.getcwd()   # Current directory (where 90/, 91/ folders are)
+# Paths to your CSV files
+TRAIN_FILE = "dataset/train.csv"
+VAL_FILE   = "dataset/val.csv"
 
-# CSV Column Names (Verify these match your CSV header!)
-COL_IMAGE = "image_path"   # Column containing "99/121.jpg"
-COL_TEXT  = "text"         # Column containing the OCR text
+# Base folder for images. 
+# If your CSV says "90/121.jpg", this joins to "dataset/90/121.jpg"
+IMAGE_ROOT = "dataset"  
+
+# ✅ MATCHING YOUR CSV HEADERS:
+COL_IMAGE = "filepath"  # Matches your "filepath" header
+COL_TEXT  = "text"      # Matches your "text" header
 
 os.environ["UNSLOTH_WARN_UNINITIALIZED"] = '0'
 
@@ -38,20 +41,19 @@ model, tokenizer = FastVisionModel.from_pretrained(
     auto_model=AutoModel, 
 )
 
-# ✅ FIX: Use "chatml" for DeepSeek, not "llava"
+# Use ChatML for DeepSeek
 tokenizer = get_chat_template(tokenizer, chat_template="chatml")
 
 # ------------------------------------------------------------------------
-# 4. Load & Format Dataset (CSV Version)
+# 4. Load & Format Dataset
 # ------------------------------------------------------------------------
 dataset = load_dataset("csv", data_files={"train": TRAIN_FILE, "val": VAL_FILE})
 
 def format_data(example):
-    # 1. Construct absolute image path
-    # Combines current folder + image path from CSV (e.g. "99/121.jpg")
+    # Construct absolute image path
     img_path = os.path.join(IMAGE_ROOT, example[COL_IMAGE])
     
-    # 2. Create the conversation structure
+    # Create the conversation structure
     conversation = [
         {
             "role": "user",
@@ -76,6 +78,9 @@ def format_data(example):
 # Apply formatting
 train_dataset = dataset["train"].map(format_data, remove_columns=dataset["train"].column_names)
 val_dataset   = dataset["val"].map(format_data, remove_columns=dataset["val"].column_names)
+
+# Debug: Print the first image path to verify it's correct
+print(f"DEBUG: Checking first image path: {train_dataset[0]['image']}")
 
 # ------------------------------------------------------------------------
 # 5. Configure LoRA
@@ -104,7 +109,7 @@ trainer = SFTTrainer(
     data_collator=data_collator,
     train_dataset=train_dataset,
     eval_dataset=val_dataset,
-    dataset_text_field="", # Not used because we pre-formatted "conversations"
+    dataset_text_field="", 
     max_seq_length=4096,
     dataset_num_proc=2,
     args=SFTConfig(
@@ -116,7 +121,7 @@ trainer = SFTTrainer(
         fp16=not is_bfloat16_supported(),
         bf16=is_bfloat16_supported(),
         logging_steps=1,
-        output_dir=OUTPUT_DIR,
+        output_dir="deepseek_ocr_finetuned",
         save_strategy="steps",
         save_steps=20,
         eval_strategy="steps",
@@ -138,7 +143,7 @@ trainer.train()
 # ------------------------------------------------------------------------
 # 8. Save
 # ------------------------------------------------------------------------
-print(f"Saving fine-tuned adapter to {OUTPUT_DIR}...")
-model.save_pretrained(OUTPUT_DIR)
-tokenizer.save_pretrained(OUTPUT_DIR)
+print(f"Saving fine-tuned adapter...")
+model.save_pretrained("deepseek_ocr_finetuned")
+tokenizer.save_pretrained("deepseek_ocr_finetuned")
 print("Done!")
