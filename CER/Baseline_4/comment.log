@@ -1,0 +1,6 @@
+prompt = "<image>\nFree OCR."
+lhan@lhanubu:~/Documents/GitHub/DipSheetFyneTun/CER/Baseline_4$ python CER_calc.py 
+CER = 0.7587
+Total characters = 3365
+Total edits = 2553
+lhan@lhanubu:~/Documents/GitHub/DipSheetFyneTun/CER/Baseline_4$ 
