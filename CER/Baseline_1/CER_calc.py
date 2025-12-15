@@ -50,7 +50,7 @@ def levenshtein(a, b):
 
 # ---------- LOAD FILES ----------
 
-with open("label.json", "r", encoding="utf-8") as f:
+with open("labels.json", "r", encoding="utf-8") as f:
     labels = json.load(f)
 
 preds = {}
