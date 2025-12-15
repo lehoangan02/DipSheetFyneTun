@@ -1,0 +1,10 @@
+TEST SET 1000
+prompt = "<image>\nOCR Vietnamese.".txt
+CER = 0.6930
+Total characters = 3365
+Total edits = 2332
+lehoangan@MacbukEir Baseline_3 % python CER_calc.py 
+CER = 0.6930
+Total characters = 3365
+Total edits = 2332
+lehoangan@MacbukEir Baseline_3 % 

@@ -1,0 +1,8 @@
+TEST SET 1000
+the prompt is
+"<image>\nTranscribe the Vietnamese text in the image."
+lehoangan@MacbukEir Baseline_2 % python CER_calc.py 
+CER = 0.6817
+Total characters = 3365
+Total edits = 2294
+lehoangan@MacbukEir Baseline_2 % 
