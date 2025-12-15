@@ -1,0 +1,6 @@
+prompt = "<image>\nOCR Vietnamese.".
+lhan@lhanubu:~/Documents/GitHub/DipSheetFyneTun/CER/Baseline_5$ python CER_calc.py 
+CER = 0.6930
+Total characters = 3365
+Total edits = 2332
+lhan@lhanubu:~/Documents/GitHub/DipSheetFyneTun/CER/Baseline_5$ 
