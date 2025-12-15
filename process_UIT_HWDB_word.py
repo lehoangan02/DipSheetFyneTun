@@ -1,149 +1,87 @@
 import os
 import json
-import csv
-import unicodedata
-from tqdm import tqdm
-from PIL import Image
 import shutil
 import random
 
-# ---------------------------
-# CONFIG
-# ---------------------------
-ROOT = "DATA/UIT_HWDB_word"
-TRAIN_FOLDER = os.path.join(ROOT, "train_data")
-TEST_FOLDER = os.path.join(ROOT, "test_data")
+random.seed(42)
 
-OUT_IMAGES = "dataset/images"
-RESIZE_LONG_SIDE = 1024
-TRAIN_RATIO = 0.9  # 90% train, 10% val
+BASE_DIR = "UIT_HWDB_word"
+OUTPUT_DIR = "UIT_HWDB_word_clean"
 
-# CLEANUP: Remove old dataset folder to prevent conflicts
-if os.path.exists("dataset"):
-    print("Removing old dataset folder...")
-    shutil.rmtree("dataset")
+TRAIN_RATIO = 0.8
 
-os.makedirs(OUT_IMAGES, exist_ok=True)
+def prepare_output():
+    for split in ["train", "val", "test"]:
+        os.makedirs(os.path.join(OUTPUT_DIR, split, "images"), exist_ok=True)
 
-# ---------------------------
-# HELPER FUNCTION
-# ---------------------------
-def process_folder(src_folder, dst_folder_name):
-    rows = []
-    # Sort folders to ensure consistent order
-    folders = sorted(os.listdir(src_folder), key=lambda x: int(x) if x.isdigit() else x)
-    
-    for folder in tqdm(folders, desc=f"Processing {dst_folder_name} folders"):
-        folder_path = os.path.join(src_folder, folder)
-        label_path = os.path.join(folder_path, "label.json")
-        
-        # Skip if not a directory or label file missing
-        if not os.path.isdir(folder_path) or not os.path.exists(label_path):
+def process_split(input_dir, split_name, do_split=False):
+    all_samples = []
+
+    for folder in os.listdir(input_dir):
+        folder_path = os.path.join(input_dir, folder)
+        if not os.path.isdir(folder_path):
             continue
-        
+
+        label_path = os.path.join(folder_path, "label.json")
+        if not os.path.exists(label_path):
+            continue
+
         with open(label_path, "r", encoding="utf-8") as f:
             labels = json.load(f)
-        
+
         for img_name, text in labels.items():
-            src_img = os.path.join(folder_path, img_name)
-            # Create destination directory inside dataset/images/dst_folder_name/folder_id
-            dst_dir = os.path.join(OUT_IMAGES, dst_folder_name, folder)
-            os.makedirs(dst_dir, exist_ok=True)
-            dst_img = os.path.join(dst_dir, img_name)
-            
-            # Resize image
-            if os.path.exists(src_img):
-                try:
-                    img = Image.open(src_img)
-                    w, h = img.size
-                    long_side = max(w, h)
-                    scale = RESIZE_LONG_SIDE / long_side
-                    new_size = (int(w*scale), int(h*scale))
-                    img = img.resize(new_size, Image.Resampling.LANCZOS)
-                    img.save(dst_img)
-                    
-                    # Normalize text
-                    text = unicodedata.normalize("NFC", text)
-                    # Store relative path for CSV
-                    rows.append([f"{dst_folder_name}/{folder}/{img_name}", text])
-                except Exception as e:
-                    print(f"Error processing {src_img}: {e}")
-            else:
-                print(f"Missing image: {src_img}")
-    
-    return rows
+            img_path = os.path.join(folder_path, img_name)
+            if not os.path.exists(img_path):
+                continue
 
-# ---------------------------
-# STEP 1: Process train_data + split train/val
-# ---------------------------
-# Initially save everything to "train_tmp"
-all_train_rows = process_folder(TRAIN_FOLDER, "train_tmp")
-random.shuffle(all_train_rows)
+            new_name = f"{folder}_{img_name}"
+            all_samples.append((img_path, new_name, text))
 
-split_idx = int(TRAIN_RATIO * len(all_train_rows))
-train_rows = all_train_rows[:split_idx]
-val_rows = all_train_rows[split_idx:]
+    if do_split:
+        random.shuffle(all_samples)
+        split_idx = int(len(all_samples) * TRAIN_RATIO)
+        return {
+            "train": all_samples[:split_idx],
+            "val": all_samples[split_idx:]
+        }
+    else:
+        return {split_name: all_samples}
 
-print(f"Moving {len(val_rows)} validation files...")
+def write_split(samples, split_name):
+    label_dict = {}
+    img_out_dir = os.path.join(OUTPUT_DIR, split_name, "images")
 
-# Move files to proper 'val' folders
-for row in val_rows:
-    # row[0] is like "train_tmp/001/img.jpg"
-    old_rel_path = row[0]
-    new_rel_path = old_rel_path.replace("train_tmp", "val")
-    
-    src_path = os.path.join(OUT_IMAGES, old_rel_path)
-    dst_path = os.path.join(OUT_IMAGES, new_rel_path)
-    
-    os.makedirs(os.path.dirname(dst_path), exist_ok=True)
-    
-    # Move file if it exists
-    if os.path.exists(src_path):
-        shutil.move(src_path, dst_path)
-    
-    # Update CSV record
-    row[0] = new_rel_path
+    for src, new_name, text in samples:
+        dst = os.path.join(img_out_dir, new_name)
+        shutil.copy(src, dst)
+        label_dict[new_name] = text
 
-# Update paths in CSV records for Train rows
-for row in train_rows:
-    row[0] = row[0].replace("train_tmp", "train")
+    with open(os.path.join(OUTPUT_DIR, split_name, "labels.json"), "w", encoding="utf-8") as f:
+        json.dump(label_dict, f, ensure_ascii=False, indent=2)
 
-# FIX: Rename the directory 'train_tmp' to 'train' on the actual disk
-train_tmp_dir = os.path.join(OUT_IMAGES, "train_tmp")
-train_final_dir = os.path.join(OUT_IMAGES, "train")
+def main():
+    prepare_output()
 
-if os.path.exists(train_tmp_dir):
-    # Remove empty directories inside train_tmp that were moved to val
-    # (Optional, but keeps things clean if shutil.move left empty folders)
-    # Renaming the root folder
-    os.rename(train_tmp_dir, train_final_dir)
-else:
-    print("Warning: train_tmp directory not found (maybe empty?).")
+    # Train → train + val
+    train_samples = process_split(
+        os.path.join(BASE_DIR, "train_data"),
+        "train",
+        do_split=True
+    )
 
-# ---------------------------
-# STEP 2: Process test_data
-# ---------------------------
-test_rows = process_folder(TEST_FOLDER, "test")
+    write_split(train_samples["train"], "train")
+    write_split(train_samples["val"], "val")
 
-# ---------------------------
-# STEP 3: Save CSVs
-# ---------------------------
-print("Saving CSV files...")
-os.makedirs("dataset", exist_ok=True) # Redundant but safe
+    # Test (no split)
+    test_samples = process_split(
+        os.path.join(BASE_DIR, "test_data"),
+        "test",
+        do_split=False
+    )
 
-def save_csv(filename, rows):
-    with open(filename, "w", newline="", encoding="utf-8") as f:
-        writer = csv.writer(f)
-        writer.writerow(["filepath","text"])
-        writer.writerows(rows)
+    write_split(test_samples["test"], "test")
 
-save_csv("dataset/train.csv", train_rows)
-save_csv("dataset/val.csv", val_rows)
-save_csv("dataset/test.csv", test_rows)
+    print("✅ Dataset successfully merged and split!")
 
-print("------------------------------------------------")
-print(f"Processing Complete.")
-print(f"Train samples: {len(train_rows)}")
-print(f"Val samples:   {len(val_rows)}")
-print(f"Test samples:  {len(test_rows)}")
-print("Dataset ready in 'dataset/' folder.")
+if __name__ == "__main__":
+    main()

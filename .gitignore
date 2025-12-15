@@ -221,3 +221,5 @@ dataset.zip
 /unsloth_compiled_cache
 /deepseek_ocr
 *.zip
+/UIT_HWDB_word
+/UIT_HWDB_word_clean
