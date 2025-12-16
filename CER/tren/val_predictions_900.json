@@ -1,0 +1,4997 @@
+[
+  {
+    "filename": "108_144.jpg",
+    "ground_truth": "Bình",
+    "prediction": "bình"
+  },
+  {
+    "filename": "4_418.jpg",
+    "ground_truth": "là",
+    "prediction": "là"
+  },
+  {
+    "filename": "6_333.jpg",
+    "ground_truth": "người",
+    "prediction": "người"
+  },
+  {
+    "filename": "105_285.jpg",
+    "ground_truth": "cũng",
+    "prediction": "cũng"
+  },
+  {
+    "filename": "90_100.jpg",
+    "ground_truth": "Vân",
+    "prediction": "Văn"
+  },
+  {
+    "filename": "63_72.jpg",
+    "ground_truth": "thông",
+    "prediction": "thông"
+  },
+  {
+    "filename": "18_151.jpg",
+    "ground_truth": "rồi",
+    "prediction": "nói"
+  },
+  {
+    "filename": "161_358.jpg",
+    "ground_truth": "Trường",
+    "prediction": "Đường"
+  },
+  {
+    "filename": "130_105.jpg",
+    "ground_truth": "Tiếp",
+    "prediction": "Tiếp"
+  },
+  {
+    "filename": "238_112.jpg",
+    "ground_truth": "hành",
+    "prediction": "hành"
+  },
+  {
+    "filename": "106_475.jpg",
+    "ground_truth": "đá",
+    "prediction": "đủ"
+  },
+  {
+    "filename": "159_325.jpg",
+    "ground_truth": "đặt",
+    "prediction": "đạt"
+  },
+  {
+    "filename": "18_18.jpg",
+    "ground_truth": "11",
+    "prediction": "11"
+  },
+  {
+    "filename": "194_226.jpg",
+    "ground_truth": "làm",
+    "prediction": "làm\n\nlàm"
+  },
+  {
+    "filename": "177_130.jpg",
+    "ground_truth": "Kiểm",
+    "prediction": "kiểm"
+  },
+  {
+    "filename": "63_75.jpg",
+    "ground_truth": "nhất",
+    "prediction": "nhất"
+  },
+  {
+    "filename": "219_122.jpg",
+    "ground_truth": "Nhật",
+    "prediction": "Nhật"
+  },
+  {
+    "filename": "185_377.jpg",
+    "ground_truth": "ít",
+    "prediction": "ý"
+  },
+  {
+    "filename": "159_597.jpg",
+    "ground_truth": "như",
+    "prediction": "như"
+  },
+  {
+    "filename": "193_233.jpg",
+    "ground_truth": "vực",
+    "prediction": "vực \n\nvực"
+  },
+  {
+    "filename": "247_123.jpg",
+    "ground_truth": "bảo",
+    "prediction": "bảo"
+  },
+  {
+    "filename": "115_125.jpg",
+    "ground_truth": "3",
+    "prediction": "3"
+  },
+  {
+    "filename": "148_436.jpg",
+    "ground_truth": "giỏ",
+    "prediction": "cứu"
+  },
+  {
+    "filename": "30_314.jpg",
+    "ground_truth": "chuyện",
+    "prediction": "Chuyện"
+  },
+  {
+    "filename": "246_255.jpg",
+    "ground_truth": "báo",
+    "prediction": "báo"
+  },
+  {
+    "filename": "4_191.jpg",
+    "ground_truth": "hiện",
+    "prediction": "hiện\n\nhiện"
+  },
+  {
+    "filename": "85_320.jpg",
+    "ground_truth": "với",
+    "prediction": "với"
+  },
+  {
+    "filename": "180_344.jpg",
+    "ground_truth": "xử",
+    "prediction": "xú\n\nxã"
+  },
+  {
+    "filename": "32_107.jpg",
+    "ground_truth": "phải",
+    "prediction": "phải"
+  },
+  {
+    "filename": "194_272.jpg",
+    "ground_truth": "báo",
+    "prediction": "báo"
+  },
+  {
+    "filename": "25_2.jpg",
+    "ground_truth": "đường",
+    "prediction": "đường"
+  },
+  {
+    "filename": "247_220.jpg",
+    "ground_truth": "hưởng",
+    "prediction": "hưởng"
+  },
+  {
+    "filename": "85_303.jpg",
+    "ground_truth": "đứa",
+    "prediction": "đứa"
+  },
+  {
+    "filename": "185_145.jpg",
+    "ground_truth": "họ",
+    "prediction": "họ"
+  },
+  {
+    "filename": "97_469.jpg",
+    "ground_truth": "nhiên",
+    "prediction": "phương"
+  },
+  {
+    "filename": "175_293.jpg",
+    "ground_truth": "vẫn",
+    "prediction": "Vấn"
+  },
+  {
+    "filename": "116_395.jpg",
+    "ground_truth": "xe",
+    "prediction": "ktb"
+  },
+  {
+    "filename": "110_648.jpg",
+    "ground_truth": "nghĩa",
+    "prediction": "nghĩa"
+  },
+  {
+    "filename": "114_318.jpg",
+    "ground_truth": "Hôm",
+    "prediction": "Hôm"
+  },
+  {
+    "filename": "183_599.jpg",
+    "ground_truth": "tiếng",
+    "prediction": "thống"
+  },
+  {
+    "filename": "205_124.jpg",
+    "ground_truth": "8",
+    "prediction": "8"
+  },
+  {
+    "filename": "238_31.jpg",
+    "ground_truth": "quả",
+    "prediction": "quá"
+  },
+  {
+    "filename": "141_617.jpg",
+    "ground_truth": "đến",
+    "prediction": "đến\n\ntối"
+  },
+  {
+    "filename": "114_411.jpg",
+    "ground_truth": "ở",
+    "prediction": "ở?"
+  },
+  {
+    "filename": "16_355.jpg",
+    "ground_truth": "không",
+    "prediction": "không"
+  },
+  {
+    "filename": "31_326.jpg",
+    "ground_truth": "khi",
+    "prediction": "hội"
+  },
+  {
+    "filename": "207_125.jpg",
+    "ground_truth": "2003",
+    "prediction": "BƠI"
+  },
+  {
+    "filename": "242_195.jpg",
+    "ground_truth": "đã",
+    "prediction": "tôi\n\ntôi"
+  },
+  {
+    "filename": "71_3.jpg",
+    "ground_truth": "ra",
+    "prediction": "ra\n\nra"
+  },
+  {
+    "filename": "191_281.jpg",
+    "ground_truth": "bạc",
+    "prediction": "bac"
+  },
+  {
+    "filename": "78_46.jpg",
+    "ground_truth": "diện",
+    "prediction": "diễn)"
+  },
+  {
+    "filename": "141_535.jpg",
+    "ground_truth": "tỉnh",
+    "prediction": "tính"
+  },
+  {
+    "filename": "97_128.jpg",
+    "ground_truth": "giấy",
+    "prediction": "giấy"
+  },
+  {
+    "filename": "213_141.jpg",
+    "ground_truth": "nối",
+    "prediction": "nếu"
+  },
+  {
+    "filename": "211_405.jpg",
+    "ground_truth": "60C",
+    "prediction": "GOC"
+  },
+  {
+    "filename": "65_104.jpg",
+    "ground_truth": "bán",
+    "prediction": "bản"
+  },
+  {
+    "filename": "120_168.jpg",
+    "ground_truth": "chóng",
+    "prediction": "chứng"
+  },
+  {
+    "filename": "49_122.jpg",
+    "ground_truth": "Bản",
+    "prediction": "Bán"
+  },
+  {
+    "filename": "214_60.jpg",
+    "ground_truth": "đất",
+    "prediction": "dắt"
+  },
+  {
+    "filename": "137_277.jpg",
+    "ground_truth": "đã",
+    "prediction": "đã"
+  },
+  {
+    "filename": "184_96.jpg",
+    "ground_truth": "8",
+    "prediction": "Ô\nÔ"
+  },
+  {
+    "filename": "101_122.jpg",
+    "ground_truth": "xuống",
+    "prediction": "xuống"
+  },
+  {
+    "filename": "142_659.jpg",
+    "ground_truth": "chỉ",
+    "prediction": "chỉ"
+  },
+  {
+    "filename": "220_394.jpg",
+    "ground_truth": "hộ",
+    "prediction": "họ."
+  },
+  {
+    "filename": "180_281.jpg",
+    "ground_truth": "khởi",
+    "prediction": "khởi"
+  },
+  {
+    "filename": "36_105.jpg",
+    "ground_truth": "quần",
+    "prediction": "gần"
+  },
+  {
+    "filename": "94_49.jpg",
+    "ground_truth": "từ",
+    "prediction": "từ"
+  },
+  {
+    "filename": "179_30.jpg",
+    "ground_truth": "theo",
+    "prediction": "theo\n\ntheo"
+  },
+  {
+    "filename": "229_456.jpg",
+    "ground_truth": "chủ",
+    "prediction": "dữ"
+  },
+  {
+    "filename": "161_233.jpg",
+    "ground_truth": "đầy",
+    "prediction": "đây"
+  },
+  {
+    "filename": "202_225.jpg",
+    "ground_truth": "Từ",
+    "prediction": "Tôi"
+  },
+  {
+    "filename": "211_423.jpg",
+    "ground_truth": "rất",
+    "prediction": "tất"
+  },
+  {
+    "filename": "105_450.jpg",
+    "ground_truth": "trại",
+    "prediction": "trại"
+  },
+  {
+    "filename": "94_60.jpg",
+    "ground_truth": "tỉnh",
+    "prediction": "tỉnh"
+  },
+  {
+    "filename": "198_55.jpg",
+    "ground_truth": "thế",
+    "prediction": "thế"
+  },
+  {
+    "filename": "24_432.jpg",
+    "ground_truth": "phát",
+    "prediction": "phát"
+  },
+  {
+    "filename": "97_152.jpg",
+    "ground_truth": "hạn",
+    "prediction": "hại"
+  },
+  {
+    "filename": "57_264.jpg",
+    "ground_truth": "TP",
+    "prediction": "TP"
+  },
+  {
+    "filename": "175_164.jpg",
+    "ground_truth": "1",
+    "prediction": "1"
+  },
+  {
+    "filename": "242_95.jpg",
+    "ground_truth": "báo",
+    "prediction": "báo\n\nbáo"
+  },
+  {
+    "filename": "95_264.jpg",
+    "ground_truth": "phê",
+    "prediction": "phê"
+  },
+  {
+    "filename": "21_143.jpg",
+    "ground_truth": "sang",
+    "prediction": "sang"
+  },
+  {
+    "filename": "138_280.jpg",
+    "ground_truth": "cụ",
+    "prediction": "cụ"
+  },
+  {
+    "filename": "211_624.jpg",
+    "ground_truth": "xế",
+    "prediction": "xã\n\ncó"
+  },
+  {
+    "filename": "5_577.jpg",
+    "ground_truth": "rút",
+    "prediction": "rút"
+  },
+  {
+    "filename": "229_481.jpg",
+    "ground_truth": "người",
+    "prediction": "người"
+  },
+  {
+    "filename": "154_223.jpg",
+    "ground_truth": "lặn",
+    "prediction": "liện"
+  },
+  {
+    "filename": "111_368.jpg",
+    "ground_truth": "bao",
+    "prediction": "bao"
+  },
+  {
+    "filename": "208_301.jpg",
+    "ground_truth": "bảo",
+    "prediction": "bảo\n\nbảo"
+  },
+  {
+    "filename": "19_495.jpg",
+    "ground_truth": "vì",
+    "prediction": "vì"
+  },
+  {
+    "filename": "232_534.jpg",
+    "ground_truth": "là",
+    "prediction": "là"
+  },
+  {
+    "filename": "34_779.jpg",
+    "ground_truth": "này",
+    "prediction": "này"
+  },
+  {
+    "filename": "103_300.jpg",
+    "ground_truth": "Chăng",
+    "prediction": "Chúng"
+  },
+  {
+    "filename": "193_141.jpg",
+    "ground_truth": "nhũng",
+    "prediction": "nhưng"
+  },
+  {
+    "filename": "23_138.jpg",
+    "ground_truth": "cách",
+    "prediction": "cách"
+  },
+  {
+    "filename": "85_27.jpg",
+    "ground_truth": "biết",
+    "prediction": "biết\n\nbiết"
+  },
+  {
+    "filename": "191_334.jpg",
+    "ground_truth": "trên",
+    "prediction": "trên"
+  },
+  {
+    "filename": "192_132.jpg",
+    "ground_truth": "và",
+    "prediction": "và"
+  },
+  {
+    "filename": "109_40.jpg",
+    "ground_truth": "Giang",
+    "prediction": "Giảng"
+  },
+  {
+    "filename": "116_325.jpg",
+    "ground_truth": "TP",
+    "prediction": "TP"
+  },
+  {
+    "filename": "158_99.jpg",
+    "ground_truth": "36",
+    "prediction": "36"
+  },
+  {
+    "filename": "235_108.jpg",
+    "ground_truth": "quản",
+    "prediction": "quản"
+  },
+  {
+    "filename": "203_443.jpg",
+    "ground_truth": "về",
+    "prediction": "về"
+  },
+  {
+    "filename": "244_85.jpg",
+    "ground_truth": "Công",
+    "prediction": "Công"
+  },
+  {
+    "filename": "219_70.jpg",
+    "ground_truth": "các",
+    "prediction": "các"
+  },
+  {
+    "filename": "150_169.jpg",
+    "ground_truth": "đang",
+    "prediction": "đang"
+  },
+  {
+    "filename": "187_62.jpg",
+    "ground_truth": "trưởng",
+    "prediction": "thường"
+  },
+  {
+    "filename": "211_347.jpg",
+    "ground_truth": "cảm",
+    "prediction": "cảm"
+  },
+  {
+    "filename": "40_483.jpg",
+    "ground_truth": "các",
+    "prediction": "chỉ"
+  },
+  {
+    "filename": "122_470.jpg",
+    "ground_truth": "đây",
+    "prediction": "điện"
+  },
+  {
+    "filename": "29_559.jpg",
+    "ground_truth": "thể",
+    "prediction": "thế"
+  },
+  {
+    "filename": "22_505.jpg",
+    "ground_truth": "sẽ",
+    "prediction": "sẽ"
+  },
+  {
+    "filename": "223_85.jpg",
+    "ground_truth": "nhân",
+    "prediction": "nhân"
+  },
+  {
+    "filename": "208_311.jpg",
+    "ground_truth": "hỏi",
+    "prediction": "hỏi"
+  },
+  {
+    "filename": "133_196.jpg",
+    "ground_truth": "và",
+    "prediction": "và"
+  },
+  {
+    "filename": "176_254.jpg",
+    "ground_truth": "tôi",
+    "prediction": "tôi"
+  },
+  {
+    "filename": "220_146.jpg",
+    "ground_truth": "Yên",
+    "prediction": "Yên"
+  },
+  {
+    "filename": "241_22.jpg",
+    "ground_truth": "Việt",
+    "prediction": "Việt"
+  },
+  {
+    "filename": "65_13.jpg",
+    "ground_truth": "nghị",
+    "prediction": "nghị"
+  },
+  {
+    "filename": "172_213.jpg",
+    "ground_truth": "là",
+    "prediction": "tế"
+  },
+  {
+    "filename": "188_436.jpg",
+    "ground_truth": "mừng",
+    "prediction": "mừng"
+  },
+  {
+    "filename": "125_343.jpg",
+    "ground_truth": "tính",
+    "prediction": "tính"
+  },
+  {
+    "filename": "114_241.jpg",
+    "ground_truth": "như",
+    "prediction": "như"
+  },
+  {
+    "filename": "184_156.jpg",
+    "ground_truth": "mặt",
+    "prediction": "mặt"
+  },
+  {
+    "filename": "185_398.jpg",
+    "ground_truth": "họ",
+    "prediction": "họp"
+  },
+  {
+    "filename": "180_290.jpg",
+    "ground_truth": "điều",
+    "prediction": "đều"
+  },
+  {
+    "filename": "240_154.jpg",
+    "ground_truth": "tài",
+    "prediction": "tàu"
+  },
+  {
+    "filename": "152_266.jpg",
+    "ground_truth": "Nhưng",
+    "prediction": "Nhưng"
+  },
+  {
+    "filename": "148_38.jpg",
+    "ground_truth": "Anh",
+    "prediction": "Aiu"
+  },
+  {
+    "filename": "67_5.jpg",
+    "ground_truth": "trại",
+    "prediction": "thại"
+  },
+  {
+    "filename": "120_259.jpg",
+    "ground_truth": "thông",
+    "prediction": "thông"
+  },
+  {
+    "filename": "88_122.jpg",
+    "ground_truth": "hỏi",
+    "prediction": "hỏi"
+  },
+  {
+    "filename": "233_4.jpg",
+    "ground_truth": "BIỂN",
+    "prediction": "Biển"
+  },
+  {
+    "filename": "12_122.jpg",
+    "ground_truth": "40",
+    "prediction": "40"
+  },
+  {
+    "filename": "95_98.jpg",
+    "ground_truth": "thực",
+    "prediction": "thực"
+  },
+  {
+    "filename": "77_219.jpg",
+    "ground_truth": "về",
+    "prediction": "về"
+  },
+  {
+    "filename": "220_505.jpg",
+    "ground_truth": "phía",
+    "prediction": "phúc"
+  },
+  {
+    "filename": "63_343.jpg",
+    "ground_truth": "khi",
+    "prediction": "khu\n\nkhu"
+  },
+  {
+    "filename": "16_80.jpg",
+    "ground_truth": "ngẫm",
+    "prediction": "ngầm"
+  },
+  {
+    "filename": "82_360.jpg",
+    "ground_truth": "Ngày",
+    "prediction": "ngay"
+  },
+  {
+    "filename": "150_33.jpg",
+    "ground_truth": "Phước",
+    "prediction": "Phước"
+  },
+  {
+    "filename": "18_113.jpg",
+    "ground_truth": "nhỏ",
+    "prediction": "nhỏ"
+  },
+  {
+    "filename": "237_129.jpg",
+    "ground_truth": "các",
+    "prediction": "các"
+  },
+  {
+    "filename": "5_353.jpg",
+    "ground_truth": "tự",
+    "prediction": "tụi"
+  },
+  {
+    "filename": "209_260.jpg",
+    "ground_truth": "bà",
+    "prediction": "là"
+  },
+  {
+    "filename": "27_342.jpg",
+    "ground_truth": "tâm",
+    "prediction": "tâm"
+  },
+  {
+    "filename": "58_359.jpg",
+    "ground_truth": "xuồng",
+    "prediction": "xiống"
+  },
+  {
+    "filename": "34_897.jpg",
+    "ground_truth": "bởi",
+    "prediction": "lơ3i"
+  },
+  {
+    "filename": "207_233.jpg",
+    "ground_truth": "nói",
+    "prediction": "nói"
+  },
+  {
+    "filename": "187_388.jpg",
+    "ground_truth": "mỗi",
+    "prediction": "mỗi"
+  },
+  {
+    "filename": "28_79.jpg",
+    "ground_truth": "thềm",
+    "prediction": "thêm"
+  },
+  {
+    "filename": "58_355.jpg",
+    "ground_truth": "theo",
+    "prediction": "theo"
+  },
+  {
+    "filename": "85_102.jpg",
+    "ground_truth": "vất",
+    "prediction": "vất\n\nvất"
+  },
+  {
+    "filename": "191_383.jpg",
+    "ground_truth": "lộ",
+    "prediction": "lộ\n\nlộ"
+  },
+  {
+    "filename": "225_107.jpg",
+    "ground_truth": "đang",
+    "prediction": "đang"
+  },
+  {
+    "filename": "79_487.jpg",
+    "ground_truth": "Tám",
+    "prediction": "Tâm"
+  },
+  {
+    "filename": "189_108.jpg",
+    "ground_truth": "Tôi",
+    "prediction": "(Tôi)"
+  },
+  {
+    "filename": "182_170.jpg",
+    "ground_truth": "chẩn",
+    "prediction": "chưa\n\nchưa"
+  },
+  {
+    "filename": "5_277.jpg",
+    "ground_truth": "chủ",
+    "prediction": "chủ"
+  },
+  {
+    "filename": "249_190.jpg",
+    "ground_truth": "tháp",
+    "prediction": "tháp"
+  },
+  {
+    "filename": "59_60.jpg",
+    "ground_truth": "các",
+    "prediction": "các"
+  },
+  {
+    "filename": "145_378.jpg",
+    "ground_truth": "150",
+    "prediction": "150"
+  },
+  {
+    "filename": "176_244.jpg",
+    "ground_truth": "khoa",
+    "prediction": "khu\n\nkhu"
+  },
+  {
+    "filename": "133_111.jpg",
+    "ground_truth": "liệu",
+    "prediction": "liệu"
+  },
+  {
+    "filename": "8_160.jpg",
+    "ground_truth": "Giao",
+    "prediction": "Chào"
+  },
+  {
+    "filename": "234_20.jpg",
+    "ground_truth": "từ",
+    "prediction": "từ\n\ntừ"
+  },
+  {
+    "filename": "205_175.jpg",
+    "ground_truth": "tặng",
+    "prediction": "Tăng"
+  },
+  {
+    "filename": "234_316.jpg",
+    "ground_truth": "trình",
+    "prediction": "trình"
+  },
+  {
+    "filename": "193_299.jpg",
+    "ground_truth": "môn",
+    "prediction": "môi"
+  },
+  {
+    "filename": "162_297.jpg",
+    "ground_truth": "đó",
+    "prediction": "có\n\nCó"
+  },
+  {
+    "filename": "114_458.jpg",
+    "ground_truth": "cây",
+    "prediction": "cây"
+  },
+  {
+    "filename": "24_97.jpg",
+    "ground_truth": "cháu",
+    "prediction": "cháu"
+  },
+  {
+    "filename": "161_153.jpg",
+    "ground_truth": "là",
+    "prediction": "là\n\nlà"
+  },
+  {
+    "filename": "97_407.jpg",
+    "ground_truth": "cầm",
+    "prediction": "cầm"
+  },
+  {
+    "filename": "88_194.jpg",
+    "ground_truth": "Gần",
+    "prediction": "Giấm"
+  },
+  {
+    "filename": "107_70.jpg",
+    "ground_truth": "thủy",
+    "prediction": "thủy"
+  },
+  {
+    "filename": "204_63.jpg",
+    "ground_truth": "một",
+    "prediction": "một"
+  },
+  {
+    "filename": "157_464.jpg",
+    "ground_truth": "Thỏa",
+    "prediction": "Thỏa"
+  },
+  {
+    "filename": "128_205.jpg",
+    "ground_truth": "cầu",
+    "prediction": "cái"
+  },
+  {
+    "filename": "180_549.jpg",
+    "ground_truth": "cáo",
+    "prediction": "cào"
+  },
+  {
+    "filename": "193_466.jpg",
+    "ground_truth": "học",
+    "prediction": "học"
+  },
+  {
+    "filename": "212_506.jpg",
+    "ground_truth": "chính",
+    "prediction": "chính"
+  },
+  {
+    "filename": "67_411.jpg",
+    "ground_truth": "25",
+    "prediction": "25"
+  },
+  {
+    "filename": "102_147.jpg",
+    "ground_truth": "VN",
+    "prediction": "VN"
+  },
+  {
+    "filename": "141_703.jpg",
+    "ground_truth": "tải",
+    "prediction": "tài"
+  },
+  {
+    "filename": "212_149.jpg",
+    "ground_truth": "UBND",
+    "prediction": "UBND"
+  },
+  {
+    "filename": "154_92.jpg",
+    "ground_truth": "nối",
+    "prediction": "nói"
+  },
+  {
+    "filename": "5_49.jpg",
+    "ground_truth": "triển",
+    "prediction": "-triển"
+  },
+  {
+    "filename": "197_637.jpg",
+    "ground_truth": "4",
+    "prediction": "4"
+  },
+  {
+    "filename": "120_611.jpg",
+    "ground_truth": "chưa",
+    "prediction": "chứa"
+  },
+  {
+    "filename": "148_482.jpg",
+    "ground_truth": "đến",
+    "prediction": "đến\n\ntối"
+  },
+  {
+    "filename": "18_108.jpg",
+    "ground_truth": "bởi",
+    "prediction": "cởi"
+  },
+  {
+    "filename": "98_374.jpg",
+    "ground_truth": "họ",
+    "prediction": "họ"
+  },
+  {
+    "filename": "48_86.jpg",
+    "ground_truth": "2004",
+    "prediction": "20,14"
+  },
+  {
+    "filename": "120_967.jpg",
+    "ground_truth": "sẽ",
+    "prediction": "có\n\ncó"
+  },
+  {
+    "filename": "49_15.jpg",
+    "ground_truth": "Nguyễn",
+    "prediction": "Nguyên"
+  },
+  {
+    "filename": "80_655.jpg",
+    "ground_truth": "có",
+    "prediction": "về\n\nvới"
+  },
+  {
+    "filename": "18_595.jpg",
+    "ground_truth": "khó",
+    "prediction": "hồi"
+  },
+  {
+    "filename": "244_139.jpg",
+    "ground_truth": "ngày",
+    "prediction": "ngày"
+  },
+  {
+    "filename": "201_824.jpg",
+    "ground_truth": "câu",
+    "prediction": "cầu"
+  },
+  {
+    "filename": "138_34.jpg",
+    "ground_truth": "Nghĩa",
+    "prediction": "Nghĩa"
+  },
+  {
+    "filename": "25_523.jpg",
+    "ground_truth": "huyện",
+    "prediction": "huyện"
+  },
+  {
+    "filename": "133_10.jpg",
+    "ground_truth": "chị",
+    "prediction": "chị"
+  },
+  {
+    "filename": "177_694.jpg",
+    "ground_truth": "có",
+    "prediction": "có"
+  },
+  {
+    "filename": "212_357.jpg",
+    "ground_truth": "UBND",
+    "prediction": "UBND"
+  },
+  {
+    "filename": "212_513.jpg",
+    "ground_truth": "một",
+    "prediction": "một"
+  },
+  {
+    "filename": "236_400.jpg",
+    "ground_truth": "đã",
+    "prediction": "đã"
+  },
+  {
+    "filename": "110_141.jpg",
+    "ground_truth": "địa",
+    "prediction": "địa\n\nthị"
+  },
+  {
+    "filename": "237_95.jpg",
+    "ground_truth": "chỉ",
+    "prediction": "chỉ"
+  },
+  {
+    "filename": "176_253.jpg",
+    "ground_truth": "động",
+    "prediction": "động"
+  },
+  {
+    "filename": "249_19.jpg",
+    "ground_truth": "cho",
+    "prediction": "cho"
+  },
+  {
+    "filename": "29_124.jpg",
+    "ground_truth": "cơ",
+    "prediction": "cơ\n\ncơ"
+  },
+  {
+    "filename": "9_68.jpg",
+    "ground_truth": "người",
+    "prediction": "người"
+  },
+  {
+    "filename": "153_383.jpg",
+    "ground_truth": "thể",
+    "prediction": "thì"
+  },
+  {
+    "filename": "118_121.jpg",
+    "ground_truth": "thời",
+    "prediction": "thôi"
+  },
+  {
+    "filename": "94_52.jpg",
+    "ground_truth": "tháng",
+    "prediction": "tháng"
+  },
+  {
+    "filename": "228_187.jpg",
+    "ground_truth": "bị",
+    "prediction": "bị\n\nbị"
+  },
+  {
+    "filename": "243_491.jpg",
+    "ground_truth": "đi",
+    "prediction": "đi"
+  },
+  {
+    "filename": "30_537.jpg",
+    "ground_truth": "mênh",
+    "prediction": "mến"
+  },
+  {
+    "filename": "178_237.jpg",
+    "ground_truth": "rên",
+    "prediction": "Nên"
+  },
+  {
+    "filename": "28_142.jpg",
+    "ground_truth": "nối",
+    "prediction": "nói"
+  },
+  {
+    "filename": "215_288.jpg",
+    "ground_truth": "với",
+    "prediction": "với"
+  },
+  {
+    "filename": "117_676.jpg",
+    "ground_truth": "từ",
+    "prediction": "từ"
+  },
+  {
+    "filename": "248_122.jpg",
+    "ground_truth": "của",
+    "prediction": "của"
+  },
+  {
+    "filename": "74_284.jpg",
+    "ground_truth": "nhà",
+    "prediction": "nhà"
+  },
+  {
+    "filename": "104_229.jpg",
+    "ground_truth": "phía",
+    "prediction": "phần"
+  },
+  {
+    "filename": "216_452.jpg",
+    "ground_truth": "nên",
+    "prediction": "nên"
+  },
+  {
+    "filename": "135_442.jpg",
+    "ground_truth": "để",
+    "prediction": "đủ"
+  },
+  {
+    "filename": "55_698.jpg",
+    "ground_truth": "những",
+    "prediction": "những"
+  },
+  {
+    "filename": "40_546.jpg",
+    "ground_truth": "xe",
+    "prediction": "xe\n\nxe"
+  },
+  {
+    "filename": "208_352.jpg",
+    "ground_truth": "xuống",
+    "prediction": "xuống"
+  },
+  {
+    "filename": "217_42.jpg",
+    "ground_truth": "ở",
+    "prediction": "ở\n\nở"
+  },
+  {
+    "filename": "137_153.jpg",
+    "ground_truth": "mẹ",
+    "prediction": "mẹ"
+  },
+  {
+    "filename": "223_440.jpg",
+    "ground_truth": "thấy",
+    "prediction": "hủy"
+  },
+  {
+    "filename": "207_472.jpg",
+    "ground_truth": "300",
+    "prediction": "300"
+  },
+  {
+    "filename": "248_395.jpg",
+    "ground_truth": "êkip",
+    "prediction": "đích\n\nkhông"
+  },
+  {
+    "filename": "18_518.jpg",
+    "ground_truth": "họ",
+    "prediction": "họ"
+  },
+  {
+    "filename": "9_190.jpg",
+    "ground_truth": "mà",
+    "prediction": "mà"
+  },
+  {
+    "filename": "129_56.jpg",
+    "ground_truth": "1",
+    "prediction": "1"
+  },
+  {
+    "filename": "18_115.jpg",
+    "ground_truth": "từ",
+    "prediction": "từi"
+  },
+  {
+    "filename": "134_207.jpg",
+    "ground_truth": "nghiện",
+    "prediction": "nghịng"
+  },
+  {
+    "filename": "215_184.jpg",
+    "ground_truth": "khu",
+    "prediction": "hàm"
+  },
+  {
+    "filename": "192_354.jpg",
+    "ground_truth": "là",
+    "prediction": "là"
+  },
+  {
+    "filename": "104_324.jpg",
+    "ground_truth": "ở",
+    "prediction": "ở"
+  },
+  {
+    "filename": "110_372.jpg",
+    "ground_truth": "theo",
+    "prediction": "theo\n\ntheo"
+  },
+  {
+    "filename": "118_629.jpg",
+    "ground_truth": "NVƠNN",
+    "prediction": "NVÔN NƠ"
+  },
+  {
+    "filename": "139_38.jpg",
+    "ground_truth": "chính",
+    "prediction": "chính"
+  },
+  {
+    "filename": "14_199.jpg",
+    "ground_truth": "khi",
+    "prediction": "kho\n\nkho"
+  },
+  {
+    "filename": "29_107.jpg",
+    "ground_truth": "những",
+    "prediction": "nhưng"
+  },
+  {
+    "filename": "133_370.jpg",
+    "ground_truth": "Đỡ",
+    "prediction": "đó\n\nđó"
+  },
+  {
+    "filename": "84_127.jpg",
+    "ground_truth": "đưa",
+    "prediction": "đưa"
+  },
+  {
+    "filename": "101_354.jpg",
+    "ground_truth": "thương",
+    "prediction": "thương"
+  },
+  {
+    "filename": "8_154.jpg",
+    "ground_truth": "Âu",
+    "prediction": "Anh\nAni"
+  },
+  {
+    "filename": "7_163.jpg",
+    "ground_truth": "sao",
+    "prediction": ":sau"
+  },
+  {
+    "filename": "60_6.jpg",
+    "ground_truth": "bị",
+    "prediction": "bị"
+  },
+  {
+    "filename": "156_169.jpg",
+    "ground_truth": "vừa",
+    "prediction": "vừa"
+  },
+  {
+    "filename": "148_344.jpg",
+    "ground_truth": "bong",
+    "prediction": "lương"
+  },
+  {
+    "filename": "99_156.jpg",
+    "ground_truth": "toàn",
+    "prediction": "tôi\n\ntôi"
+  },
+  {
+    "filename": "90_30.jpg",
+    "ground_truth": "Thiện",
+    "prediction": "Thiện"
+  },
+  {
+    "filename": "234_73.jpg",
+    "ground_truth": "thảo",
+    "prediction": "-thảo"
+  },
+  {
+    "filename": "121_218.jpg",
+    "ground_truth": "m",
+    "prediction": "nv\nnv"
+  },
+  {
+    "filename": "37_212.jpg",
+    "ground_truth": "thể",
+    "prediction": "thể\n\nthể"
+  },
+  {
+    "filename": "112_243.jpg",
+    "ground_truth": "ve",
+    "prediction": "ve\n\nve"
+  },
+  {
+    "filename": "187_89.jpg",
+    "ground_truth": "Hà",
+    "prediction": "thì"
+  },
+  {
+    "filename": "66_390.jpg",
+    "ground_truth": "những",
+    "prediction": "những"
+  },
+  {
+    "filename": "193_6.jpg",
+    "ground_truth": "hiện",
+    "prediction": "hiện"
+  },
+  {
+    "filename": "196_302.jpg",
+    "ground_truth": "thẳng",
+    "prediction": "thẳng"
+  },
+  {
+    "filename": "234_294.jpg",
+    "ground_truth": "trọng",
+    "prediction": "trong"
+  },
+  {
+    "filename": "30_449.jpg",
+    "ground_truth": "cứng",
+    "prediction": "cũng"
+  },
+  {
+    "filename": "227_83.jpg",
+    "ground_truth": "nước",
+    "prediction": "nước"
+  },
+  {
+    "filename": "7_421.jpg",
+    "ground_truth": "mỗi",
+    "prediction": "cổng"
+  },
+  {
+    "filename": "4_195.jpg",
+    "ground_truth": "bị",
+    "prediction": "tự"
+  },
+  {
+    "filename": "53_391.jpg",
+    "ground_truth": "lê",
+    "prediction": "lẽ\n\nlẽ"
+  },
+  {
+    "filename": "29_606.jpg",
+    "ground_truth": "ký",
+    "prediction": "lấy"
+  },
+  {
+    "filename": "232_109.jpg",
+    "ground_truth": "đến",
+    "prediction": "đến"
+  },
+  {
+    "filename": "191_318.jpg",
+    "ground_truth": "gà",
+    "prediction": "gà\n\ngà"
+  },
+  {
+    "filename": "82_343.jpg",
+    "ground_truth": "những",
+    "prediction": "những"
+  },
+  {
+    "filename": "112_116.jpg",
+    "ground_truth": "khắp",
+    "prediction": "khắp"
+  },
+  {
+    "filename": "73_426.jpg",
+    "ground_truth": "cũng",
+    "prediction": "cũng"
+  },
+  {
+    "filename": "188_290.jpg",
+    "ground_truth": "được",
+    "prediction": "được"
+  },
+  {
+    "filename": "65_284.jpg",
+    "ground_truth": "nhiễm",
+    "prediction": "nhiệm"
+  },
+  {
+    "filename": "14_219.jpg",
+    "ground_truth": "đây",
+    "prediction": "đây"
+  },
+  {
+    "filename": "35_182.jpg",
+    "ground_truth": "món",
+    "prediction": "món"
+  },
+  {
+    "filename": "177_551.jpg",
+    "ground_truth": "chung",
+    "prediction": "chung"
+  },
+  {
+    "filename": "146_224.jpg",
+    "ground_truth": "sự",
+    "prediction": "sự vậy"
+  },
+  {
+    "filename": "92_106.jpg",
+    "ground_truth": "làm",
+    "prediction": "làm"
+  },
+  {
+    "filename": "153_554.jpg",
+    "ground_truth": "dân",
+    "prediction": "sôi\n\nnói"
+  },
+  {
+    "filename": "176_173.jpg",
+    "ground_truth": "ơn",
+    "prediction": "ởi"
+  },
+  {
+    "filename": "16_375.jpg",
+    "ground_truth": "họ",
+    "prediction": "họ"
+  },
+  {
+    "filename": "129_139.jpg",
+    "ground_truth": "và",
+    "prediction": "vì"
+  },
+  {
+    "filename": "169_162.jpg",
+    "ground_truth": "Tên",
+    "prediction": "Tên"
+  },
+  {
+    "filename": "42_380.jpg",
+    "ground_truth": "các",
+    "prediction": "cái"
+  },
+  {
+    "filename": "60_84.jpg",
+    "ground_truth": "Hải",
+    "prediction": "Hảo\n\nHảo"
+  },
+  {
+    "filename": "88_331.jpg",
+    "ground_truth": "đêm",
+    "prediction": "đêm"
+  },
+  {
+    "filename": "232_491.jpg",
+    "ground_truth": "với",
+    "prediction": "nói"
+  },
+  {
+    "filename": "89_23.jpg",
+    "ground_truth": "thông",
+    "prediction": "thông"
+  },
+  {
+    "filename": "55_168.jpg",
+    "ground_truth": "đúng",
+    "prediction": "đúng"
+  },
+  {
+    "filename": "96_59.jpg",
+    "ground_truth": "lại",
+    "prediction": "lại"
+  },
+  {
+    "filename": "166_464.jpg",
+    "ground_truth": "giữa",
+    "prediction": "giữa"
+  },
+  {
+    "filename": "192_149.jpg",
+    "ground_truth": "chờ",
+    "prediction": "chủ"
+  },
+  {
+    "filename": "15_284.jpg",
+    "ground_truth": "gọi",
+    "prediction": "gọi"
+  },
+  {
+    "filename": "40_216.jpg",
+    "ground_truth": "từ",
+    "prediction": "hỏi"
+  },
+  {
+    "filename": "154_416.jpg",
+    "ground_truth": "giữa",
+    "prediction": "ngừa"
+  },
+  {
+    "filename": "184_53.jpg",
+    "ground_truth": "trình",
+    "prediction": "thính"
+  },
+  {
+    "filename": "9_191.jpg",
+    "ground_truth": "nhanh",
+    "prediction": "nhân"
+  },
+  {
+    "filename": "159_86.jpg",
+    "ground_truth": "chồng",
+    "prediction": "chồng"
+  },
+  {
+    "filename": "196_213.jpg",
+    "ground_truth": "chỉ",
+    "prediction": "chỉ"
+  },
+  {
+    "filename": "29_381.jpg",
+    "ground_truth": "con",
+    "prediction": "Con"
+  },
+  {
+    "filename": "197_81.jpg",
+    "ground_truth": "Bình",
+    "prediction": "bình"
+  },
+  {
+    "filename": "40_763.jpg",
+    "ground_truth": "Bình",
+    "prediction": "rời"
+  },
+  {
+    "filename": "18_318.jpg",
+    "ground_truth": "ở",
+    "prediction": "ở"
+  },
+  {
+    "filename": "114_188.jpg",
+    "ground_truth": "ai",
+    "prediction": "an\n\nan"
+  },
+  {
+    "filename": "10_296.jpg",
+    "ground_truth": "hoàn",
+    "prediction": "hỏan"
+  },
+  {
+    "filename": "119_350.jpg",
+    "ground_truth": "bảy",
+    "prediction": "bây giờ"
+  },
+  {
+    "filename": "203_143.jpg",
+    "ground_truth": "thể",
+    "prediction": "thì"
+  },
+  {
+    "filename": "216_35.jpg",
+    "ground_truth": "ngành",
+    "prediction": "ngành"
+  },
+  {
+    "filename": "230_671.jpg",
+    "ground_truth": "xe",
+    "prediction": "xe"
+  },
+  {
+    "filename": "232_191.jpg",
+    "ground_truth": "sử",
+    "prediction": "nói"
+  },
+  {
+    "filename": "31_108.jpg",
+    "ground_truth": "con",
+    "prediction": "con\ncon"
+  },
+  {
+    "filename": "29_534.jpg",
+    "ground_truth": "ông",
+    "prediction": "Ban\n\nHoa"
+  },
+  {
+    "filename": "139_350.jpg",
+    "ground_truth": "hai",
+    "prediction": "hai"
+  },
+  {
+    "filename": "21_227.jpg",
+    "ground_truth": "nuôi",
+    "prediction": "nuôi"
+  },
+  {
+    "filename": "88_33.jpg",
+    "ground_truth": "với",
+    "prediction": "với"
+  },
+  {
+    "filename": "80_707.jpg",
+    "ground_truth": "yêu",
+    "prediction": "yếu\n\nyếu"
+  },
+  {
+    "filename": "26_173.jpg",
+    "ground_truth": "Me",
+    "prediction": "Ne\n\nxe"
+  },
+  {
+    "filename": "160_458.jpg",
+    "ground_truth": "áo",
+    "prediction": "các"
+  },
+  {
+    "filename": "41_137.jpg",
+    "ground_truth": "ở",
+    "prediction": "ở\n\nở"
+  },
+  {
+    "filename": "216_175.jpg",
+    "ground_truth": "trình",
+    "prediction": "trình bị"
+  },
+  {
+    "filename": "156_128.jpg",
+    "ground_truth": "cụ",
+    "prediction": "cụ\n\ncụ"
+  },
+  {
+    "filename": "78_117.jpg",
+    "ground_truth": "Ngày",
+    "prediction": "Ngày"
+  },
+  {
+    "filename": "203_84.jpg",
+    "ground_truth": "gây",
+    "prediction": "gần\n\ngần"
+  },
+  {
+    "filename": "122_596.jpg",
+    "ground_truth": "hạt",
+    "prediction": "Hai"
+  },
+  {
+    "filename": "134_185.jpg",
+    "ground_truth": "túy",
+    "prediction": "từ\ntừ"
+  },
+  {
+    "filename": "88_325.jpg",
+    "ground_truth": "đây",
+    "prediction": "đây"
+  },
+  {
+    "filename": "92_105.jpg",
+    "ground_truth": "vòng",
+    "prediction": "vòng"
+  },
+  {
+    "filename": "60_131.jpg",
+    "ground_truth": "Prông",
+    "prediction": "Phòng"
+  },
+  {
+    "filename": "202_17.jpg",
+    "ground_truth": "bao",
+    "prediction": "Sao"
+  },
+  {
+    "filename": "83_3.jpg",
+    "ground_truth": "không",
+    "prediction": "không"
+  },
+  {
+    "filename": "135_370.jpg",
+    "ground_truth": "chân",
+    "prediction": "chân"
+  },
+  {
+    "filename": "223_461.jpg",
+    "ground_truth": "thiết",
+    "prediction": "thiết"
+  },
+  {
+    "filename": "34_89.jpg",
+    "ground_truth": "chủ",
+    "prediction": "chủ"
+  },
+  {
+    "filename": "16_10.jpg",
+    "ground_truth": "tự",
+    "prediction": "tựa"
+  },
+  {
+    "filename": "3_180.jpg",
+    "ground_truth": "giới",
+    "prediction": "giới"
+  },
+  {
+    "filename": "158_143.jpg",
+    "ground_truth": "giải",
+    "prediction": "giải"
+  },
+  {
+    "filename": "72_84.jpg",
+    "ground_truth": "Công",
+    "prediction": "Công"
+  },
+  {
+    "filename": "161_100.jpg",
+    "ground_truth": "này",
+    "prediction": "này"
+  },
+  {
+    "filename": "150_347.jpg",
+    "ground_truth": "hai",
+    "prediction": "hai"
+  },
+  {
+    "filename": "27_300.jpg",
+    "ground_truth": "hoa",
+    "prediction": "hoa"
+  },
+  {
+    "filename": "180_490.jpg",
+    "ground_truth": "karaoke",
+    "prediction": "Karaoke"
+  },
+  {
+    "filename": "168_407.jpg",
+    "ground_truth": "Trang",
+    "prediction": "trang"
+  },
+  {
+    "filename": "158_76.jpg",
+    "ground_truth": "Campuchia",
+    "prediction": "Campuchia"
+  },
+  {
+    "filename": "27_141.jpg",
+    "ground_truth": "tiền",
+    "prediction": "tiền\n\ntiền"
+  },
+  {
+    "filename": "49_193.jpg",
+    "ground_truth": "Sơn",
+    "prediction": "Sơn"
+  },
+  {
+    "filename": "247_63.jpg",
+    "ground_truth": "bờ",
+    "prediction": "hỗ\n\nhỗ"
+  },
+  {
+    "filename": "79_199.jpg",
+    "ground_truth": "cạnh",
+    "prediction": "cạnh"
+  },
+  {
+    "filename": "185_18.jpg",
+    "ground_truth": "ở",
+    "prediction": "ởi\n\nởi"
+  },
+  {
+    "filename": "224_9.jpg",
+    "ground_truth": "ngồi",
+    "prediction": "ngói"
+  },
+  {
+    "filename": "194_457.jpg",
+    "ground_truth": "tôi",
+    "prediction": "tôi"
+  },
+  {
+    "filename": "9_299.jpg",
+    "ground_truth": "gom",
+    "prediction": "gom"
+  },
+  {
+    "filename": "243_196.jpg",
+    "ground_truth": "địa",
+    "prediction": "địa"
+  },
+  {
+    "filename": "222_174.jpg",
+    "ground_truth": "tố",
+    "prediction": "tôi\n\ntôi"
+  },
+  {
+    "filename": "110_612.jpg",
+    "ground_truth": "dưới",
+    "prediction": "dưới\n\ndưới"
+  },
+  {
+    "filename": "34_351.jpg",
+    "ground_truth": "tại",
+    "prediction": "tại"
+  },
+  {
+    "filename": "135_191.jpg",
+    "ground_truth": "ông",
+    "prediction": "ông"
+  },
+  {
+    "filename": "199_210.jpg",
+    "ground_truth": "cậu",
+    "prediction": "cậu"
+  },
+  {
+    "filename": "200_429.jpg",
+    "ground_truth": "Giang",
+    "prediction": "Trang"
+  },
+  {
+    "filename": "41_186.jpg",
+    "ground_truth": "mang",
+    "prediction": "mang"
+  },
+  {
+    "filename": "145_187.jpg",
+    "ground_truth": "cao",
+    "prediction": "con\n\ncon"
+  },
+  {
+    "filename": "198_38.jpg",
+    "ground_truth": "đến",
+    "prediction": "đến"
+  },
+  {
+    "filename": "160_642.jpg",
+    "ground_truth": "mỗi",
+    "prediction": "nhồi\n\nnhồi"
+  },
+  {
+    "filename": "239_363.jpg",
+    "ground_truth": "thành",
+    "prediction": "thành"
+  },
+  {
+    "filename": "27_173.jpg",
+    "ground_truth": "chênh",
+    "prediction": "chênh"
+  },
+  {
+    "filename": "183_28.jpg",
+    "ground_truth": "ông",
+    "prediction": "ông"
+  },
+  {
+    "filename": "42_439.jpg",
+    "ground_truth": "biết",
+    "prediction": "biết"
+  },
+  {
+    "filename": "224_234.jpg",
+    "ground_truth": "rõ",
+    "prediction": "rồi"
+  },
+  {
+    "filename": "24_219.jpg",
+    "ground_truth": "tin",
+    "prediction": "tính"
+  },
+  {
+    "filename": "222_178.jpg",
+    "ground_truth": "công",
+    "prediction": "công"
+  },
+  {
+    "filename": "110_478.jpg",
+    "ground_truth": "Thạnh",
+    "prediction": "Thành"
+  },
+  {
+    "filename": "193_363.jpg",
+    "ground_truth": "ngành",
+    "prediction": "ngành"
+  },
+  {
+    "filename": "122_270.jpg",
+    "ground_truth": "săn",
+    "prediction": "kém"
+  },
+  {
+    "filename": "116_24.jpg",
+    "ground_truth": "không",
+    "prediction": "không"
+  },
+  {
+    "filename": "55_627.jpg",
+    "ground_truth": "trẻ",
+    "prediction": "trẻ"
+  },
+  {
+    "filename": "243_367.jpg",
+    "ground_truth": "từ",
+    "prediction": "tôi"
+  },
+  {
+    "filename": "15_376.jpg",
+    "ground_truth": "những",
+    "prediction": "những"
+  },
+  {
+    "filename": "207_427.jpg",
+    "ground_truth": "khả",
+    "prediction": "khả"
+  },
+  {
+    "filename": "202_123.jpg",
+    "ground_truth": "ngày",
+    "prediction": "ngày"
+  },
+  {
+    "filename": "23_69.jpg",
+    "ground_truth": "cõi",
+    "prediction": "cối"
+  },
+  {
+    "filename": "166_435.jpg",
+    "ground_truth": "quê",
+    "prediction": "quê"
+  },
+  {
+    "filename": "187_546.jpg",
+    "ground_truth": "ưu",
+    "prediction": "vì"
+  },
+  {
+    "filename": "125_323.jpg",
+    "ground_truth": "chỗ",
+    "prediction": "chỗ"
+  },
+  {
+    "filename": "48_200.jpg",
+    "ground_truth": "nước",
+    "prediction": "nước"
+  },
+  {
+    "filename": "228_210.jpg",
+    "ground_truth": "trà",
+    "prediction": "bùa"
+  },
+  {
+    "filename": "224_19.jpg",
+    "ground_truth": "tâm",
+    "prediction": "tâm"
+  },
+  {
+    "filename": "29_304.jpg",
+    "ground_truth": "mạnh",
+    "prediction": "trình"
+  },
+  {
+    "filename": "101_478.jpg",
+    "ground_truth": "bếp",
+    "prediction": "bếp\n\nbếp"
+  },
+  {
+    "filename": "61_217.jpg",
+    "ground_truth": "lớn",
+    "prediction": "lớn"
+  },
+  {
+    "filename": "43_241.jpg",
+    "ground_truth": "cậu",
+    "prediction": "Cậm"
+  },
+  {
+    "filename": "187_635.jpg",
+    "ground_truth": "người",
+    "prediction": "Người"
+  },
+  {
+    "filename": "99_154.jpg",
+    "ground_truth": "biết",
+    "prediction": "biết"
+  },
+  {
+    "filename": "245_235.jpg",
+    "ground_truth": "thủ",
+    "prediction": "thủ"
+  },
+  {
+    "filename": "194_256.jpg",
+    "ground_truth": "cũng",
+    "prediction": "cũng"
+  },
+  {
+    "filename": "234_13.jpg",
+    "ground_truth": "VII",
+    "prediction": "VT"
+  },
+  {
+    "filename": "98_234.jpg",
+    "ground_truth": "cầu",
+    "prediction": "cấm"
+  },
+  {
+    "filename": "66_350.jpg",
+    "ground_truth": "bởi",
+    "prediction": "bài"
+  },
+  {
+    "filename": "230_119.jpg",
+    "ground_truth": "qua",
+    "prediction": "qua"
+  },
+  {
+    "filename": "93_19.jpg",
+    "ground_truth": "phòng",
+    "prediction": "phòng"
+  },
+  {
+    "filename": "215_427.jpg",
+    "ground_truth": "bảo",
+    "prediction": "bảo"
+  },
+  {
+    "filename": "41_206.jpg",
+    "ground_truth": "hợp",
+    "prediction": "hợp"
+  },
+  {
+    "filename": "217_328.jpg",
+    "ground_truth": "Ngược",
+    "prediction": "Người Ngoại"
+  },
+  {
+    "filename": "5_195.jpg",
+    "ground_truth": "Chủ",
+    "prediction": "Chủ\nChủ"
+  },
+  {
+    "filename": "120_694.jpg",
+    "ground_truth": "vào",
+    "prediction": "vào"
+  },
+  {
+    "filename": "105_81.jpg",
+    "ground_truth": "du",
+    "prediction": "dua"
+  },
+  {
+    "filename": "173_171.jpg",
+    "ground_truth": "nước",
+    "prediction": "nuôi"
+  },
+  {
+    "filename": "246_403.jpg",
+    "ground_truth": "ĐDV",
+    "prediction": "-ĐDV"
+  },
+  {
+    "filename": "222_189.jpg",
+    "ground_truth": "đề",
+    "prediction": "để"
+  },
+  {
+    "filename": "211_590.jpg",
+    "ground_truth": "viết",
+    "prediction": "viết"
+  },
+  {
+    "filename": "142_416.jpg",
+    "ground_truth": "đã",
+    "prediction": "của"
+  },
+  {
+    "filename": "134_177.jpg",
+    "ground_truth": "nhấn",
+    "prediction": "nhân"
+  },
+  {
+    "filename": "124_38.jpg",
+    "ground_truth": "tám",
+    "prediction": "tổn\n\ntổn"
+  },
+  {
+    "filename": "110_670.jpg",
+    "ground_truth": "đường",
+    "prediction": "thường"
+  },
+  {
+    "filename": "5_568.jpg",
+    "ground_truth": "đường",
+    "prediction": "đường"
+  },
+  {
+    "filename": "98_91.jpg",
+    "ground_truth": "được",
+    "prediction": "được"
+  },
+  {
+    "filename": "157_286.jpg",
+    "ground_truth": "quản",
+    "prediction": "quản"
+  },
+  {
+    "filename": "185_301.jpg",
+    "ground_truth": "sự",
+    "prediction": "Sự"
+  },
+  {
+    "filename": "134_169.jpg",
+    "ground_truth": "dâm",
+    "prediction": "cấm"
+  },
+  {
+    "filename": "61_50.jpg",
+    "ground_truth": "biển",
+    "prediction": "biển"
+  },
+  {
+    "filename": "12_119.jpg",
+    "ground_truth": "Tĩnh",
+    "prediction": "Tình\n\nTình"
+  },
+  {
+    "filename": "58_465.jpg",
+    "ground_truth": "Tôi",
+    "prediction": "soi"
+  },
+  {
+    "filename": "195_226.jpg",
+    "ground_truth": "dang",
+    "prediction": "đang"
+  },
+  {
+    "filename": "193_452.jpg",
+    "ground_truth": "Về",
+    "prediction": "về"
+  },
+  {
+    "filename": "47_151.jpg",
+    "ground_truth": "Sông",
+    "prediction": "Sông"
+  },
+  {
+    "filename": "70_309.jpg",
+    "ground_truth": "có",
+    "prediction": "có"
+  },
+  {
+    "filename": "120_589.jpg",
+    "ground_truth": "ứ",
+    "prediction": "hồi\n\nvề"
+  },
+  {
+    "filename": "77_297.jpg",
+    "ground_truth": "vay",
+    "prediction": "vay"
+  },
+  {
+    "filename": "58_288.jpg",
+    "ground_truth": "làm",
+    "prediction": "làm\n\nlàm"
+  },
+  {
+    "filename": "198_31.jpg",
+    "ground_truth": "dài",
+    "prediction": "dài"
+  },
+  {
+    "filename": "5_416.jpg",
+    "ground_truth": "Băn",
+    "prediction": "Bán\n\nBán"
+  },
+  {
+    "filename": "157_52.jpg",
+    "ground_truth": "rõ",
+    "prediction": "nói"
+  },
+  {
+    "filename": "49_213.jpg",
+    "ground_truth": "thị",
+    "prediction": "thị."
+  },
+  {
+    "filename": "23_349.jpg",
+    "ground_truth": "tìm",
+    "prediction": "thời"
+  },
+  {
+    "filename": "111_99.jpg",
+    "ground_truth": "gà",
+    "prediction": "gà"
+  },
+  {
+    "filename": "77_298.jpg",
+    "ground_truth": "là",
+    "prediction": "là"
+  },
+  {
+    "filename": "90_111.jpg",
+    "ground_truth": "Trong",
+    "prediction": "Hàng"
+  },
+  {
+    "filename": "111_55.jpg",
+    "ground_truth": "gà",
+    "prediction": "gia"
+  },
+  {
+    "filename": "130_419.jpg",
+    "ground_truth": "phụ",
+    "prediction": "Phụ"
+  },
+  {
+    "filename": "224_106.jpg",
+    "ground_truth": "những",
+    "prediction": "nhưng"
+  },
+  {
+    "filename": "64_135.jpg",
+    "ground_truth": "điểm",
+    "prediction": "điểm"
+  },
+  {
+    "filename": "69_367.jpg",
+    "ground_truth": "định",
+    "prediction": "nước"
+  },
+  {
+    "filename": "63_374.jpg",
+    "ground_truth": "việc",
+    "prediction": "việc"
+  },
+  {
+    "filename": "64_301.jpg",
+    "ground_truth": "tư",
+    "prediction": "tư\n\ntư"
+  },
+  {
+    "filename": "118_796.jpg",
+    "ground_truth": "trước",
+    "prediction": "trước"
+  },
+  {
+    "filename": "16_6.jpg",
+    "ground_truth": "Đã",
+    "prediction": "Hà\n\nHà"
+  },
+  {
+    "filename": "159_105.jpg",
+    "ground_truth": "khỏi",
+    "prediction": "hưới"
+  },
+  {
+    "filename": "124_144.jpg",
+    "ground_truth": "âu",
+    "prediction": "dù\n\năn"
+  },
+  {
+    "filename": "69_259.jpg",
+    "ground_truth": "ra",
+    "prediction": "va"
+  },
+  {
+    "filename": "240_68.jpg",
+    "ground_truth": "lũ",
+    "prediction": "lũ\n\nlũ"
+  },
+  {
+    "filename": "202_293.jpg",
+    "ground_truth": "chiến",
+    "prediction": "chiến"
+  },
+  {
+    "filename": "141_377.jpg",
+    "ground_truth": "dự",
+    "prediction": "dự"
+  },
+  {
+    "filename": "210_261.jpg",
+    "ground_truth": "nhân",
+    "prediction": "nhân"
+  },
+  {
+    "filename": "160_522.jpg",
+    "ground_truth": "Vào",
+    "prediction": "Vào"
+  },
+  {
+    "filename": "127_293.jpg",
+    "ground_truth": "19",
+    "prediction": "19"
+  },
+  {
+    "filename": "70_19.jpg",
+    "ground_truth": "bỏ",
+    "prediction": "bỏ\n\nbỏ"
+  },
+  {
+    "filename": "12_102.jpg",
+    "ground_truth": "chiếm",
+    "prediction": "chính\n\nchính"
+  },
+  {
+    "filename": "58_575.jpg",
+    "ground_truth": "diện",
+    "prediction": "dược\n\ndịện"
+  },
+  {
+    "filename": "141_729.jpg",
+    "ground_truth": "các",
+    "prediction": "các"
+  },
+  {
+    "filename": "186_300.jpg",
+    "ground_truth": "quyền",
+    "prediction": "người"
+  },
+  {
+    "filename": "67_9.jpg",
+    "ground_truth": "có",
+    "prediction": "có"
+  },
+  {
+    "filename": "236_134.jpg",
+    "ground_truth": "trăm",
+    "prediction": "thân"
+  },
+  {
+    "filename": "200_121.jpg",
+    "ground_truth": "xe",
+    "prediction": "xe\n\nxe"
+  },
+  {
+    "filename": "55_256.jpg",
+    "ground_truth": "cây",
+    "prediction": "cây"
+  },
+  {
+    "filename": "193_522.jpg",
+    "ground_truth": "giảm",
+    "prediction": "giảm"
+  },
+  {
+    "filename": "58_302.jpg",
+    "ground_truth": "đầy",
+    "prediction": "đây"
+  },
+  {
+    "filename": "217_281.jpg",
+    "ground_truth": "thật",
+    "prediction": "thật"
+  },
+  {
+    "filename": "74_334.jpg",
+    "ground_truth": "đến",
+    "prediction": "đến"
+  },
+  {
+    "filename": "42_110.jpg",
+    "ground_truth": "sách",
+    "prediction": "Sói"
+  },
+  {
+    "filename": "68_75.jpg",
+    "ground_truth": "một",
+    "prediction": "một."
+  },
+  {
+    "filename": "14_222.jpg",
+    "ground_truth": "trung",
+    "prediction": "trung"
+  },
+  {
+    "filename": "43_105.jpg",
+    "ground_truth": "bố",
+    "prediction": "bố"
+  },
+  {
+    "filename": "111_398.jpg",
+    "ground_truth": "Tính",
+    "prediction": "Tính"
+  },
+  {
+    "filename": "118_389.jpg",
+    "ground_truth": "định",
+    "prediction": "định"
+  },
+  {
+    "filename": "199_290.jpg",
+    "ground_truth": "quyết",
+    "prediction": "quyết"
+  },
+  {
+    "filename": "161_482.jpg",
+    "ground_truth": "đi",
+    "prediction": "đi"
+  },
+  {
+    "filename": "19_121.jpg",
+    "ground_truth": "kết",
+    "prediction": "kết"
+  },
+  {
+    "filename": "137_290.jpg",
+    "ground_truth": "quyết",
+    "prediction": "quyết"
+  },
+  {
+    "filename": "161_388.jpg",
+    "ground_truth": "nhà",
+    "prediction": "nhà"
+  },
+  {
+    "filename": "82_351.jpg",
+    "ground_truth": "giọt",
+    "prediction": "giọt"
+  },
+  {
+    "filename": "6_441.jpg",
+    "ground_truth": "nhưng",
+    "prediction": "nhưng"
+  },
+  {
+    "filename": "189_141.jpg",
+    "ground_truth": "rớt",
+    "prediction": "rốt"
+  },
+  {
+    "filename": "229_364.jpg",
+    "ground_truth": "xứ",
+    "prediction": "xu"
+  },
+  {
+    "filename": "21_339.jpg",
+    "ground_truth": "Nhưng",
+    "prediction": "Những"
+  },
+  {
+    "filename": "145_617.jpg",
+    "ground_truth": "chung",
+    "prediction": "chung"
+  },
+  {
+    "filename": "193_456.jpg",
+    "ground_truth": "hội",
+    "prediction": "hội"
+  },
+  {
+    "filename": "73_34.jpg",
+    "ground_truth": "đó",
+    "prediction": "đó"
+  },
+  {
+    "filename": "32_254.jpg",
+    "ground_truth": "rụt",
+    "prediction": "mọi"
+  },
+  {
+    "filename": "134_135.jpg",
+    "ground_truth": "vào",
+    "prediction": "quả"
+  },
+  {
+    "filename": "168_241.jpg",
+    "ground_truth": "ngọn",
+    "prediction": "nạn phí"
+  },
+  {
+    "filename": "116_122.jpg",
+    "ground_truth": "Trưng",
+    "prediction": "Trương"
+  },
+  {
+    "filename": "153_487.jpg",
+    "ground_truth": "Lãnh",
+    "prediction": "Chủ"
+  },
+  {
+    "filename": "108_81.jpg",
+    "ground_truth": "địa",
+    "prediction": "địa"
+  },
+  {
+    "filename": "87_3.jpg",
+    "ground_truth": "lặng",
+    "prediction": "lặng"
+  },
+  {
+    "filename": "18_746.jpg",
+    "ground_truth": "với",
+    "prediction": "với"
+  },
+  {
+    "filename": "127_130.jpg",
+    "ground_truth": "em",
+    "prediction": "em"
+  },
+  {
+    "filename": "49_196.jpg",
+    "ground_truth": "giảm",
+    "prediction": "giảm"
+  },
+  {
+    "filename": "103_430.jpg",
+    "ground_truth": "thằng",
+    "prediction": "thẳng"
+  },
+  {
+    "filename": "208_14.jpg",
+    "ground_truth": "thuận",
+    "prediction": "thuận"
+  },
+  {
+    "filename": "160_1.jpg",
+    "ground_truth": "Trước",
+    "prediction": "Trước"
+  },
+  {
+    "filename": "28_64.jpg",
+    "ground_truth": "bờ",
+    "prediction": "tôi"
+  },
+  {
+    "filename": "90_11.jpg",
+    "ground_truth": "đồng",
+    "prediction": "đồng"
+  },
+  {
+    "filename": "113_317.jpg",
+    "ground_truth": "được",
+    "prediction": "được"
+  },
+  {
+    "filename": "197_793.jpg",
+    "ground_truth": "tiến",
+    "prediction": "thời"
+  },
+  {
+    "filename": "138_241.jpg",
+    "ground_truth": "ĐDV",
+    "prediction": "ĐDV"
+  },
+  {
+    "filename": "193_305.jpg",
+    "ground_truth": "đức",
+    "prediction": "đức"
+  },
+  {
+    "filename": "179_486.jpg",
+    "ground_truth": "Bộ",
+    "prediction": "bộ\n\nbộ"
+  },
+  {
+    "filename": "34_598.jpg",
+    "ground_truth": "thực",
+    "prediction": "thực"
+  },
+  {
+    "filename": "212_15.jpg",
+    "ground_truth": "Yên",
+    "prediction": "Yen\n\nten"
+  },
+  {
+    "filename": "70_330.jpg",
+    "ground_truth": "thành",
+    "prediction": "thành"
+  },
+  {
+    "filename": "213_190.jpg",
+    "ground_truth": "Có",
+    "prediction": "Có\n\nCó"
+  },
+  {
+    "filename": "148_119.jpg",
+    "ground_truth": "rong",
+    "prediction": "rong"
+  },
+  {
+    "filename": "193_84.jpg",
+    "ground_truth": "vi",
+    "prediction": "vì"
+  },
+  {
+    "filename": "105_502.jpg",
+    "ground_truth": "số",
+    "prediction": "bố\n\nbố"
+  },
+  {
+    "filename": "177_833.jpg",
+    "ground_truth": "câu",
+    "prediction": "cầu"
+  },
+  {
+    "filename": "87_410.jpg",
+    "ground_truth": "Đón",
+    "prediction": "đòi\n\nđòi"
+  },
+  {
+    "filename": "95_239.jpg",
+    "ground_truth": "Nguyễn",
+    "prediction": "thuyền"
+  },
+  {
+    "filename": "117_126.jpg",
+    "ground_truth": "phải",
+    "prediction": "phải"
+  },
+  {
+    "filename": "6_282.jpg",
+    "ground_truth": "12",
+    "prediction": "12"
+  },
+  {
+    "filename": "115_2.jpg",
+    "ground_truth": "CHẤT",
+    "prediction": "CHẤT"
+  },
+  {
+    "filename": "181_117.jpg",
+    "ground_truth": "và",
+    "prediction": "nói"
+  },
+  {
+    "filename": "66_387.jpg",
+    "ground_truth": "trong",
+    "prediction": "Trong"
+  },
+  {
+    "filename": "172_19.jpg",
+    "ground_truth": "cho",
+    "prediction": "cho"
+  },
+  {
+    "filename": "215_680.jpg",
+    "ground_truth": "phương",
+    "prediction": "những"
+  },
+  {
+    "filename": "61_12.jpg",
+    "ground_truth": "biển",
+    "prediction": "biển"
+  },
+  {
+    "filename": "228_280.jpg",
+    "ground_truth": "nhân",
+    "prediction": "nhân"
+  },
+  {
+    "filename": "65_85.jpg",
+    "ground_truth": "sở",
+    "prediction": "Số\n\nSố"
+  },
+  {
+    "filename": "57_428.jpg",
+    "ground_truth": "Chúng",
+    "prediction": "Chương"
+  },
+  {
+    "filename": "157_213.jpg",
+    "ground_truth": "loại",
+    "prediction": "loại"
+  },
+  {
+    "filename": "235_301.jpg",
+    "ground_truth": "và",
+    "prediction": "vừa"
+  },
+  {
+    "filename": "76_160.jpg",
+    "ground_truth": "sĩ",
+    "prediction": "số\n\nsố"
+  },
+  {
+    "filename": "79_423.jpg",
+    "ground_truth": "đi",
+    "prediction": "đi"
+  },
+  {
+    "filename": "147_176.jpg",
+    "ground_truth": "Trường",
+    "prediction": "Trường"
+  },
+  {
+    "filename": "119_96.jpg",
+    "ground_truth": "cách",
+    "prediction": "cách"
+  },
+  {
+    "filename": "62_102.jpg",
+    "ground_truth": "chế",
+    "prediction": "chế\n\ngì"
+  },
+  {
+    "filename": "241_176.jpg",
+    "ground_truth": "nhiệt",
+    "prediction": "nhiệt"
+  },
+  {
+    "filename": "197_797.jpg",
+    "ground_truth": "phải",
+    "prediction": "phải"
+  },
+  {
+    "filename": "12_421.jpg",
+    "ground_truth": "biển",
+    "prediction": "biển"
+  },
+  {
+    "filename": "174_636.jpg",
+    "ground_truth": "số",
+    "prediction": "đó"
+  },
+  {
+    "filename": "35_392.jpg",
+    "ground_truth": "là",
+    "prediction": "là"
+  },
+  {
+    "filename": "249_40.jpg",
+    "ground_truth": "Hội",
+    "prediction": "Hội"
+  },
+  {
+    "filename": "164_95.jpg",
+    "ground_truth": "tháng",
+    "prediction": "thường"
+  },
+  {
+    "filename": "46_265.jpg",
+    "ground_truth": "chúng",
+    "prediction": "chúng"
+  },
+  {
+    "filename": "201_359.jpg",
+    "ground_truth": "bán",
+    "prediction": "bán"
+  },
+  {
+    "filename": "243_62.jpg",
+    "ground_truth": "HCM",
+    "prediction": "Hơn"
+  },
+  {
+    "filename": "220_569.jpg",
+    "ground_truth": "Xuân",
+    "prediction": "Quản\n\nXuân"
+  },
+  {
+    "filename": "202_300.jpg",
+    "ground_truth": "ước",
+    "prediction": "với\n\nvới"
+  },
+  {
+    "filename": "110_208.jpg",
+    "ground_truth": "đó",
+    "prediction": "đồ \nđó"
+  },
+  {
+    "filename": "52_37.jpg",
+    "ground_truth": "có",
+    "prediction": "cơ\n\ncơ"
+  },
+  {
+    "filename": "67_461.jpg",
+    "ground_truth": "ty",
+    "prediction": "ty"
+  },
+  {
+    "filename": "24_506.jpg",
+    "ground_truth": "những",
+    "prediction": "những"
+  },
+  {
+    "filename": "119_359.jpg",
+    "ground_truth": "thất",
+    "prediction": "thất"
+  },
+  {
+    "filename": "6_473.jpg",
+    "ground_truth": "Cái",
+    "prediction": "có"
+  },
+  {
+    "filename": "103_77.jpg",
+    "ground_truth": "thị",
+    "prediction": "thịt"
+  },
+  {
+    "filename": "10_61.jpg",
+    "ground_truth": "vừa",
+    "prediction": "vừa"
+  },
+  {
+    "filename": "230_215.jpg",
+    "ground_truth": "chuyện",
+    "prediction": "chuyên"
+  },
+  {
+    "filename": "30_231.jpg",
+    "ground_truth": "người",
+    "prediction": "người"
+  },
+  {
+    "filename": "243_590.jpg",
+    "ground_truth": "CSGT",
+    "prediction": "CSGT"
+  },
+  {
+    "filename": "97_385.jpg",
+    "ground_truth": "và",
+    "prediction": "với"
+  },
+  {
+    "filename": "101_361.jpg",
+    "ground_truth": "chết",
+    "prediction": "chết"
+  },
+  {
+    "filename": "125_132.jpg",
+    "ground_truth": "một",
+    "prediction": "một"
+  },
+  {
+    "filename": "28_247.jpg",
+    "ground_truth": "đến",
+    "prediction": "đến\n\nđến"
+  },
+  {
+    "filename": "216_21.jpg",
+    "ground_truth": "A5",
+    "prediction": "A5"
+  },
+  {
+    "filename": "218_103.jpg",
+    "ground_truth": "làng",
+    "prediction": "làng"
+  },
+  {
+    "filename": "192_415.jpg",
+    "ground_truth": "dạng",
+    "prediction": "dạng"
+  },
+  {
+    "filename": "51_146.jpg",
+    "ground_truth": "ngày",
+    "prediction": "ngày"
+  },
+  {
+    "filename": "201_263.jpg",
+    "ground_truth": "không",
+    "prediction": "không"
+  },
+  {
+    "filename": "22_9.jpg",
+    "ground_truth": "Ngay",
+    "prediction": "Ngay"
+  },
+  {
+    "filename": "27_337.jpg",
+    "ground_truth": "xương",
+    "prediction": "xương"
+  },
+  {
+    "filename": "130_320.jpg",
+    "ground_truth": "bản",
+    "prediction": "bản"
+  },
+  {
+    "filename": "228_439.jpg",
+    "ground_truth": "anh",
+    "prediction": "anh"
+  },
+  {
+    "filename": "119_176.jpg",
+    "ground_truth": "mẹ",
+    "prediction": "mẹ"
+  },
+  {
+    "filename": "226_146.jpg",
+    "ground_truth": "trong",
+    "prediction": "trong"
+  },
+  {
+    "filename": "10_304.jpg",
+    "ground_truth": "số",
+    "prediction": "có\n\ncó"
+  },
+  {
+    "filename": "58_165.jpg",
+    "ground_truth": "với",
+    "prediction": "vốn"
+  },
+  {
+    "filename": "172_129.jpg",
+    "ground_truth": "TP",
+    "prediction": "TP"
+  },
+  {
+    "filename": "105_246.jpg",
+    "ground_truth": "thế",
+    "prediction": "thế"
+  },
+  {
+    "filename": "16_240.jpg",
+    "ground_truth": "lực",
+    "prediction": "lực"
+  },
+  {
+    "filename": "239_99.jpg",
+    "ground_truth": "đến",
+    "prediction": "để"
+  },
+  {
+    "filename": "30_566.jpg",
+    "ground_truth": "tôi",
+    "prediction": "tôi\n\ntôi"
+  },
+  {
+    "filename": "160_308.jpg",
+    "ground_truth": "máy",
+    "prediction": "máy"
+  },
+  {
+    "filename": "99_297.jpg",
+    "ground_truth": "ở",
+    "prediction": "ởi"
+  },
+  {
+    "filename": "54_127.jpg",
+    "ground_truth": "Hoàng",
+    "prediction": "thông"
+  },
+  {
+    "filename": "4_393.jpg",
+    "ground_truth": "với",
+    "prediction": "Với"
+  },
+  {
+    "filename": "39_166.jpg",
+    "ground_truth": "sĩ",
+    "prediction": "sẽ"
+  },
+  {
+    "filename": "123_157.jpg",
+    "ground_truth": "xe",
+    "prediction": "xe\n\nxe"
+  },
+  {
+    "filename": "6_125.jpg",
+    "ground_truth": "và",
+    "prediction": "Dã"
+  },
+  {
+    "filename": "4_243.jpg",
+    "ground_truth": "thuộc",
+    "prediction": "thực hiện"
+  },
+  {
+    "filename": "34_188.jpg",
+    "ground_truth": "thành",
+    "prediction": "thành"
+  },
+  {
+    "filename": "219_15.jpg",
+    "ground_truth": "Nam",
+    "prediction": "Nam"
+  },
+  {
+    "filename": "7_475.jpg",
+    "ground_truth": "một",
+    "prediction": "một"
+  },
+  {
+    "filename": "35_272.jpg",
+    "ground_truth": "Trái",
+    "prediction": "Tài\n\nTài"
+  },
+  {
+    "filename": "187_761.jpg",
+    "ground_truth": "đóng",
+    "prediction": "đóng"
+  },
+  {
+    "filename": "135_437.jpg",
+    "ground_truth": "che",
+    "prediction": "che\n\nche"
+  },
+  {
+    "filename": "23_414.jpg",
+    "ground_truth": "ấy",
+    "prediction": "dãy"
+  },
+  {
+    "filename": "211_165.jpg",
+    "ground_truth": "đổ",
+    "prediction": "để"
+  },
+  {
+    "filename": "102_142.jpg",
+    "ground_truth": "Hà",
+    "prediction": "Hà"
+  },
+  {
+    "filename": "195_206.jpg",
+    "ground_truth": "trước",
+    "prediction": "trước"
+  },
+  {
+    "filename": "46_466.jpg",
+    "ground_truth": "ông",
+    "prediction": "ông"
+  },
+  {
+    "filename": "64_101.jpg",
+    "ground_truth": "Tốc",
+    "prediction": "tôi\n\ntôi"
+  },
+  {
+    "filename": "63_506.jpg",
+    "ground_truth": "được",
+    "prediction": "được"
+  },
+  {
+    "filename": "118_534.jpg",
+    "ground_truth": "để",
+    "prediction": "để"
+  },
+  {
+    "filename": "42_585.jpg",
+    "ground_truth": "NN",
+    "prediction": "NƠI"
+  },
+  {
+    "filename": "147_269.jpg",
+    "ground_truth": "xe",
+    "prediction": "xe\n\nxe"
+  },
+  {
+    "filename": "186_156.jpg",
+    "ground_truth": "làm",
+    "prediction": "làm"
+  },
+  {
+    "filename": "220_95.jpg",
+    "ground_truth": "tỉnh",
+    "prediction": "tình"
+  },
+  {
+    "filename": "232_524.jpg",
+    "ground_truth": "UB",
+    "prediction": "UB"
+  },
+  {
+    "filename": "153_593.jpg",
+    "ground_truth": "cảng",
+    "prediction": "các"
+  },
+  {
+    "filename": "218_47.jpg",
+    "ground_truth": "các",
+    "prediction": "các"
+  },
+  {
+    "filename": "117_132.jpg",
+    "ground_truth": "Hội",
+    "prediction": "thị."
+  },
+  {
+    "filename": "145_461.jpg",
+    "ground_truth": "hàng",
+    "prediction": "hàng"
+  },
+  {
+    "filename": "89_448.jpg",
+    "ground_truth": "địa",
+    "prediction": "điện"
+  },
+  {
+    "filename": "77_240.jpg",
+    "ground_truth": "khác",
+    "prediction": "Phái"
+  },
+  {
+    "filename": "245_190.jpg",
+    "ground_truth": "món",
+    "prediction": "môi"
+  },
+  {
+    "filename": "145_605.jpg",
+    "ground_truth": "khách",
+    "prediction": "khách"
+  },
+  {
+    "filename": "33_208.jpg",
+    "ground_truth": "nên",
+    "prediction": "quên"
+  },
+  {
+    "filename": "133_452.jpg",
+    "ground_truth": "nhờ",
+    "prediction": "nhỏ"
+  },
+  {
+    "filename": "104_375.jpg",
+    "ground_truth": "nhờ",
+    "prediction": "nhỏ"
+  },
+  {
+    "filename": "30_385.jpg",
+    "ground_truth": "nổi",
+    "prediction": "môi\n\nnói"
+  },
+  {
+    "filename": "18_688.jpg",
+    "ground_truth": "phía",
+    "prediction": "phía"
+  },
+  {
+    "filename": "112_456.jpg",
+    "ground_truth": "tất",
+    "prediction": "tất"
+  },
+  {
+    "filename": "120_1.jpg",
+    "ground_truth": "Nhiều",
+    "prediction": "Nhiên"
+  },
+  {
+    "filename": "69_369.jpg",
+    "ground_truth": "Đó",
+    "prediction": "là"
+  },
+  {
+    "filename": "38_395.jpg",
+    "ground_truth": "được",
+    "prediction": "được"
+  },
+  {
+    "filename": "170_150.jpg",
+    "ground_truth": "mua",
+    "prediction": "mua"
+  },
+  {
+    "filename": "76_82.jpg",
+    "ground_truth": "1",
+    "prediction": "1"
+  },
+  {
+    "filename": "77_62.jpg",
+    "ground_truth": "định",
+    "prediction": "định"
+  },
+  {
+    "filename": "130_288.jpg",
+    "ground_truth": "không",
+    "prediction": "không"
+  },
+  {
+    "filename": "184_414.jpg",
+    "ground_truth": "đi",
+    "prediction": "đi"
+  },
+  {
+    "filename": "74_443.jpg",
+    "ground_truth": "thảm",
+    "prediction": "thâm"
+  },
+  {
+    "filename": "82_105.jpg",
+    "ground_truth": "lý",
+    "prediction": "lời"
+  },
+  {
+    "filename": "119_326.jpg",
+    "ground_truth": "rầu",
+    "prediction": "rẫu"
+  },
+  {
+    "filename": "187_143.jpg",
+    "ground_truth": "chính",
+    "prediction": "chính"
+  },
+  {
+    "filename": "34_516.jpg",
+    "ground_truth": "sáng",
+    "prediction": "sáng"
+  },
+  {
+    "filename": "42_425.jpg",
+    "ground_truth": "triển",
+    "prediction": "triển\n\ntriển"
+  },
+  {
+    "filename": "90_110.jpg",
+    "ground_truth": "tịch",
+    "prediction": "tịch"
+  },
+  {
+    "filename": "123_148.jpg",
+    "ground_truth": "tâm",
+    "prediction": "tầm"
+  },
+  {
+    "filename": "85_198.jpg",
+    "ground_truth": "Đại",
+    "prediction": "tội"
+  },
+  {
+    "filename": "205_28.jpg",
+    "ground_truth": "đó",
+    "prediction": "đỏ"
+  },
+  {
+    "filename": "247_59.jpg",
+    "ground_truth": "đất",
+    "prediction": "đất"
+  },
+  {
+    "filename": "199_74.jpg",
+    "ground_truth": "thời",
+    "prediction": "thời"
+  },
+  {
+    "filename": "159_383.jpg",
+    "ground_truth": "gian",
+    "prediction": "gian\n\ngian"
+  },
+  {
+    "filename": "47_143.jpg",
+    "ground_truth": "Sông",
+    "prediction": "Sông"
+  },
+  {
+    "filename": "118_103.jpg",
+    "ground_truth": "dẫn",
+    "prediction": "dân\n\ndân"
+  },
+  {
+    "filename": "79_94.jpg",
+    "ground_truth": "đưa",
+    "prediction": "đưa"
+  },
+  {
+    "filename": "152_10.jpg",
+    "ground_truth": "tự",
+    "prediction": "họ."
+  },
+  {
+    "filename": "66_285.jpg",
+    "ground_truth": "ngày",
+    "prediction": "sáng\nsáng"
+  },
+  {
+    "filename": "117_286.jpg",
+    "ground_truth": "đồng",
+    "prediction": "đồng"
+  },
+  {
+    "filename": "14_2.jpg",
+    "ground_truth": "nhưng",
+    "prediction": "Không"
+  },
+  {
+    "filename": "97_444.jpg",
+    "ground_truth": "Đỡ",
+    "prediction": "dị"
+  },
+  {
+    "filename": "29_346.jpg",
+    "ground_truth": "kiều",
+    "prediction": "kiến"
+  },
+  {
+    "filename": "102_126.jpg",
+    "ground_truth": "ignaraja",
+    "prediction": "Tghayá"
+  },
+  {
+    "filename": "150_504.jpg",
+    "ground_truth": "Bình",
+    "prediction": "bình"
+  },
+  {
+    "filename": "38_462.jpg",
+    "ground_truth": "hướng",
+    "prediction": "huyết"
+  },
+  {
+    "filename": "135_295.jpg",
+    "ground_truth": "gánh",
+    "prediction": "gánh"
+  },
+  {
+    "filename": "126_192.jpg",
+    "ground_truth": "hạnh",
+    "prediction": "hạnh"
+  },
+  {
+    "filename": "187_686.jpg",
+    "ground_truth": "cộng",
+    "prediction": "cộng\n\ncộng"
+  },
+  {
+    "filename": "191_306.jpg",
+    "ground_truth": "bả",
+    "prediction": "bà\n\nbà"
+  },
+  {
+    "filename": "234_456.jpg",
+    "ground_truth": "tiếp",
+    "prediction": "thập"
+  },
+  {
+    "filename": "157_27.jpg",
+    "ground_truth": "nghị",
+    "prediction": "nghị"
+  },
+  {
+    "filename": "180_276.jpg",
+    "ground_truth": "hoàn",
+    "prediction": "hôm"
+  },
+  {
+    "filename": "137_261.jpg",
+    "ground_truth": "được",
+    "prediction": "được"
+  },
+  {
+    "filename": "61_86.jpg",
+    "ground_truth": "triệu",
+    "prediction": "thiệu"
+  },
+  {
+    "filename": "22_463.jpg",
+    "ground_truth": "hình",
+    "prediction": "thành"
+  },
+  {
+    "filename": "76_93.jpg",
+    "ground_truth": "bị",
+    "prediction": "bị\n\nbị"
+  },
+  {
+    "filename": "145_74.jpg",
+    "ground_truth": "vã",
+    "prediction": "và\n\nvà"
+  },
+  {
+    "filename": "224_395.jpg",
+    "ground_truth": "cấp",
+    "prediction": "cấp"
+  },
+  {
+    "filename": "180_309.jpg",
+    "ground_truth": "tra",
+    "prediction": "tra\n\ntra"
+  },
+  {
+    "filename": "168_211.jpg",
+    "ground_truth": "thời",
+    "prediction": "thời"
+  },
+  {
+    "filename": "83_30.jpg",
+    "ground_truth": "đó",
+    "prediction": "đó"
+  },
+  {
+    "filename": "122_604.jpg",
+    "ground_truth": "nó",
+    "prediction": "nó"
+  },
+  {
+    "filename": "142_470.jpg",
+    "ground_truth": "phải",
+    "prediction": "Thích"
+  },
+  {
+    "filename": "141_35.jpg",
+    "ground_truth": "dang",
+    "prediction": "dang"
+  },
+  {
+    "filename": "47_376.jpg",
+    "ground_truth": "giấy",
+    "prediction": "giấy"
+  },
+  {
+    "filename": "222_194.jpg",
+    "ground_truth": "triển",
+    "prediction": "triển"
+  },
+  {
+    "filename": "87_412.jpg",
+    "ground_truth": "Nhưng",
+    "prediction": "Nhưng"
+  },
+  {
+    "filename": "180_502.jpg",
+    "ground_truth": "phòng",
+    "prediction": "phòng"
+  },
+  {
+    "filename": "4_427.jpg",
+    "ground_truth": "tổ",
+    "prediction": "tôi"
+  },
+  {
+    "filename": "148_198.jpg",
+    "ground_truth": "Trong",
+    "prediction": "Trong"
+  },
+  {
+    "filename": "100_130.jpg",
+    "ground_truth": "Nam",
+    "prediction": "Năm"
+  },
+  {
+    "filename": "117_351.jpg",
+    "ground_truth": "tín",
+    "prediction": "tún"
+  },
+  {
+    "filename": "53_87.jpg",
+    "ground_truth": "tại",
+    "prediction": "tại"
+  },
+  {
+    "filename": "192_332.jpg",
+    "ground_truth": "qua",
+    "prediction": "quan\n\nquan"
+  },
+  {
+    "filename": "208_289.jpg",
+    "ground_truth": "sò",
+    "prediction": "rò"
+  },
+  {
+    "filename": "225_198.jpg",
+    "ground_truth": "nước",
+    "prediction": "mức"
+  },
+  {
+    "filename": "43_166.jpg",
+    "ground_truth": "bếp",
+    "prediction": "bếp"
+  },
+  {
+    "filename": "71_405.jpg",
+    "ground_truth": "Việt",
+    "prediction": "việc"
+  },
+  {
+    "filename": "120_503.jpg",
+    "ground_truth": "ứng",
+    "prediction": "rừng"
+  },
+  {
+    "filename": "42_23.jpg",
+    "ground_truth": "Oanh",
+    "prediction": "Oanh"
+  },
+  {
+    "filename": "150_78.jpg",
+    "ground_truth": "thực",
+    "prediction": "thực"
+  },
+  {
+    "filename": "136_212.jpg",
+    "ground_truth": "hú",
+    "prediction": "hơi"
+  },
+  {
+    "filename": "63_44.jpg",
+    "ground_truth": "Cách",
+    "prediction": "Cách"
+  },
+  {
+    "filename": "183_426.jpg",
+    "ground_truth": "này",
+    "prediction": "vòng"
+  },
+  {
+    "filename": "170_117.jpg",
+    "ground_truth": "rộng",
+    "prediction": "nộng"
+  },
+  {
+    "filename": "222_205.jpg",
+    "ground_truth": "Các",
+    "prediction": "Các"
+  },
+  {
+    "filename": "136_17.jpg",
+    "ground_truth": "tan",
+    "prediction": "thu\n\nthu"
+  },
+  {
+    "filename": "22_640.jpg",
+    "ground_truth": "cần",
+    "prediction": "cấm"
+  },
+  {
+    "filename": "176_186.jpg",
+    "ground_truth": "tại",
+    "prediction": "tại\n\ntại"
+  },
+  {
+    "filename": "244_190.jpg",
+    "ground_truth": "nhận",
+    "prediction": "nhận"
+  },
+  {
+    "filename": "207_292.jpg",
+    "ground_truth": "cơ",
+    "prediction": "cơ"
+  },
+  {
+    "filename": "207_323.jpg",
+    "ground_truth": "quý",
+    "prediction": "quý"
+  },
+  {
+    "filename": "222_141.jpg",
+    "ground_truth": "phát",
+    "prediction": "phát"
+  },
+  {
+    "filename": "55_752.jpg",
+    "ground_truth": "nên",
+    "prediction": "nên"
+  },
+  {
+    "filename": "86_134.jpg",
+    "ground_truth": "đen",
+    "prediction": "đen"
+  },
+  {
+    "filename": "24_172.jpg",
+    "ground_truth": "cách",
+    "prediction": "cảnh"
+  },
+  {
+    "filename": "146_33.jpg",
+    "ground_truth": "260",
+    "prediction": "2 60"
+  },
+  {
+    "filename": "106_24.jpg",
+    "ground_truth": "Nam",
+    "prediction": "Nam"
+  },
+  {
+    "filename": "5_493.jpg",
+    "ground_truth": "Ông",
+    "prediction": "Ông"
+  },
+  {
+    "filename": "176_278.jpg",
+    "ground_truth": "Nguyễn",
+    "prediction": "nguyên"
+  },
+  {
+    "filename": "216_283.jpg",
+    "ground_truth": "phải",
+    "prediction": "phải"
+  },
+  {
+    "filename": "202_130.jpg",
+    "ground_truth": "hơi",
+    "prediction": "hỏi"
+  },
+  {
+    "filename": "47_118.jpg",
+    "ground_truth": "trong",
+    "prediction": "trong"
+  },
+  {
+    "filename": "39_247.jpg",
+    "ground_truth": "cao",
+    "prediction": "rau"
+  },
+  {
+    "filename": "164_13.jpg",
+    "ground_truth": "Tại",
+    "prediction": "tại"
+  },
+  {
+    "filename": "93_114.jpg",
+    "ground_truth": "trong",
+    "prediction": "trong"
+  },
+  {
+    "filename": "147_48.jpg",
+    "ground_truth": "huyết",
+    "prediction": "huyết"
+  },
+  {
+    "filename": "6_79.jpg",
+    "ground_truth": "bên",
+    "prediction": "bên\n\nbên"
+  },
+  {
+    "filename": "181_180.jpg",
+    "ground_truth": "nông",
+    "prediction": "nông"
+  },
+  {
+    "filename": "239_166.jpg",
+    "ground_truth": "chiến",
+    "prediction": "chính\n\nchính"
+  },
+  {
+    "filename": "143_98.jpg",
+    "ground_truth": "Lê",
+    "prediction": "Lê\n\nLê"
+  },
+  {
+    "filename": "71_387.jpg",
+    "ground_truth": "quan",
+    "prediction": "quan\n\nquan"
+  },
+  {
+    "filename": "230_210.jpg",
+    "ground_truth": "mặt",
+    "prediction": "mặt"
+  },
+  {
+    "filename": "95_474.jpg",
+    "ground_truth": "300",
+    "prediction": "300"
+  },
+  {
+    "filename": "168_177.jpg",
+    "ground_truth": "những",
+    "prediction": "nhưng"
+  },
+  {
+    "filename": "117_433.jpg",
+    "ground_truth": "là",
+    "prediction": "là"
+  },
+  {
+    "filename": "219_217.jpg",
+    "ground_truth": "An",
+    "prediction": "BN"
+  },
+  {
+    "filename": "232_284.jpg",
+    "ground_truth": "cách",
+    "prediction": "cách"
+  },
+  {
+    "filename": "16_182.jpg",
+    "ground_truth": "Một",
+    "prediction": "Mặt"
+  },
+  {
+    "filename": "148_494.jpg",
+    "ground_truth": "công",
+    "prediction": "công"
+  },
+  {
+    "filename": "200_254.jpg",
+    "ground_truth": "những",
+    "prediction": "những"
+  },
+  {
+    "filename": "52_85.jpg",
+    "ground_truth": "lịch",
+    "prediction": "lịch"
+  },
+  {
+    "filename": "187_823.jpg",
+    "ground_truth": "mà",
+    "prediction": "mà"
+  },
+  {
+    "filename": "169_115.jpg",
+    "ground_truth": "nhiều",
+    "prediction": "nhân"
+  },
+  {
+    "filename": "157_221.jpg",
+    "ground_truth": "Đặng",
+    "prediction": "thống"
+  },
+  {
+    "filename": "23_328.jpg",
+    "ground_truth": "gió",
+    "prediction": "giờ"
+  },
+  {
+    "filename": "120_758.jpg",
+    "ground_truth": "hầu",
+    "prediction": "hồn"
+  },
+  {
+    "filename": "163_108.jpg",
+    "ground_truth": "thuê",
+    "prediction": "thức"
+  },
+  {
+    "filename": "58_321.jpg",
+    "ground_truth": "phui",
+    "prediction": "phủ"
+  },
+  {
+    "filename": "70_197.jpg",
+    "ground_truth": "lanh",
+    "prediction": "lanh"
+  },
+  {
+    "filename": "49_131.jpg",
+    "ground_truth": "10",
+    "prediction": "10"
+  },
+  {
+    "filename": "124_311.jpg",
+    "ground_truth": "kiếm",
+    "prediction": "tiềm\n\ntiềm"
+  },
+  {
+    "filename": "179_56.jpg",
+    "ground_truth": "mạnh",
+    "prediction": "mạnh"
+  },
+  {
+    "filename": "47_252.jpg",
+    "ground_truth": "tỉnh",
+    "prediction": "tỉnh"
+  },
+  {
+    "filename": "70_38.jpg",
+    "ground_truth": "chính",
+    "prediction": "chính"
+  },
+  {
+    "filename": "87_360.jpg",
+    "ground_truth": "duyệt",
+    "prediction": "duyệt"
+  },
+  {
+    "filename": "13_173.jpg",
+    "ground_truth": "đã",
+    "prediction": "đã"
+  },
+  {
+    "filename": "153_56.jpg",
+    "ground_truth": "điều",
+    "prediction": "điều"
+  },
+  {
+    "filename": "74_223.jpg",
+    "ground_truth": "khóc",
+    "prediction": "khỏi"
+  },
+  {
+    "filename": "158_135.jpg",
+    "ground_truth": "lại",
+    "prediction": "lại"
+  },
+  {
+    "filename": "191_353.jpg",
+    "ground_truth": "sản",
+    "prediction": "sản"
+  },
+  {
+    "filename": "80_506.jpg",
+    "ground_truth": "con",
+    "prediction": "con\n\ncon"
+  },
+  {
+    "filename": "126_259.jpg",
+    "ground_truth": "được",
+    "prediction": "được"
+  },
+  {
+    "filename": "183_85.jpg",
+    "ground_truth": "này",
+    "prediction": "này"
+  },
+  {
+    "filename": "148_457.jpg",
+    "ground_truth": "Qua",
+    "prediction": "Rua"
+  },
+  {
+    "filename": "170_298.jpg",
+    "ground_truth": "Chú",
+    "prediction": "khu\n\nkhu"
+  },
+  {
+    "filename": "228_81.jpg",
+    "ground_truth": "thuộc",
+    "prediction": "thực\n\nthực"
+  },
+  {
+    "filename": "15_379.jpg",
+    "ground_truth": "loại",
+    "prediction": "loại"
+  },
+  {
+    "filename": "9_200.jpg",
+    "ground_truth": "lần",
+    "prediction": "lẫn"
+  },
+  {
+    "filename": "184_367.jpg",
+    "ground_truth": "anh",
+    "prediction": "anh"
+  },
+  {
+    "filename": "24_155.jpg",
+    "ground_truth": "thứ",
+    "prediction": "thì"
+  },
+  {
+    "filename": "122_340.jpg",
+    "ground_truth": "tháng",
+    "prediction": "tháng"
+  },
+  {
+    "filename": "17_189.jpg",
+    "ground_truth": "tài",
+    "prediction": "tôi"
+  },
+  {
+    "filename": "243_238.jpg",
+    "ground_truth": "không",
+    "prediction": "không"
+  },
+  {
+    "filename": "71_9.jpg",
+    "ground_truth": "tác",
+    "prediction": "tài"
+  },
+  {
+    "filename": "211_291.jpg",
+    "ground_truth": "dục",
+    "prediction": "dục"
+  },
+  {
+    "filename": "19_176.jpg",
+    "ground_truth": "cho",
+    "prediction": "cho"
+  },
+  {
+    "filename": "57_94.jpg",
+    "ground_truth": "nhẹ",
+    "prediction": "nhẹ"
+  },
+  {
+    "filename": "77_73.jpg",
+    "ground_truth": "khu",
+    "prediction": "khu\n\nkhu"
+  },
+  {
+    "filename": "138_214.jpg",
+    "ground_truth": "lên",
+    "prediction": "lên\n\nlên"
+  },
+  {
+    "filename": "203_535.jpg",
+    "ground_truth": "kiểm",
+    "prediction": "kiểm\n\nkiểm"
+  },
+  {
+    "filename": "73_341.jpg",
+    "ground_truth": "kiều",
+    "prediction": "kiên\n\nkiên"
+  },
+  {
+    "filename": "249_213.jpg",
+    "ground_truth": "thị",
+    "prediction": "thị."
+  },
+  {
+    "filename": "90_79.jpg",
+    "ground_truth": "tham",
+    "prediction": "tham"
+  },
+  {
+    "filename": "112_124.jpg",
+    "ground_truth": "đã",
+    "prediction": "của"
+  },
+  {
+    "filename": "160_376.jpg",
+    "ground_truth": "nơi",
+    "prediction": "nhờ"
+  },
+  {
+    "filename": "128_93.jpg",
+    "ground_truth": "44000",
+    "prediction": "44000"
+  },
+  {
+    "filename": "36_199.jpg",
+    "ground_truth": "phong",
+    "prediction": "phong"
+  },
+  {
+    "filename": "190_38.jpg",
+    "ground_truth": "tàu",
+    "prediction": "tàu"
+  },
+  {
+    "filename": "82_350.jpg",
+    "ground_truth": "còn",
+    "prediction": "con"
+  },
+  {
+    "filename": "224_357.jpg",
+    "ground_truth": "xe",
+    "prediction": "xe"
+  },
+  {
+    "filename": "80_30.jpg",
+    "ground_truth": "giải",
+    "prediction": "giải\n\ngiải"
+  },
+  {
+    "filename": "120_519.jpg",
+    "ground_truth": "sáng",
+    "prediction": "sống"
+  },
+  {
+    "filename": "129_12.jpg",
+    "ground_truth": "biển",
+    "prediction": "viết"
+  },
+  {
+    "filename": "161_263.jpg",
+    "ground_truth": "vào",
+    "prediction": "vào"
+  },
+  {
+    "filename": "216_482.jpg",
+    "ground_truth": "không",
+    "prediction": "không"
+  },
+  {
+    "filename": "194_184.jpg",
+    "ground_truth": "bây",
+    "prediction": "bay"
+  },
+  {
+    "filename": "191_262.jpg",
+    "ground_truth": "Bắc",
+    "prediction": "Bác"
+  },
+  {
+    "filename": "134_280.jpg",
+    "ground_truth": "đó",
+    "prediction": "đó"
+  },
+  {
+    "filename": "40_487.jpg",
+    "ground_truth": "công",
+    "prediction": "xây"
+  },
+  {
+    "filename": "183_173.jpg",
+    "ground_truth": "Vụ",
+    "prediction": "Vợ"
+  },
+  {
+    "filename": "47_382.jpg",
+    "ground_truth": "cho",
+    "prediction": "cho\n\ncho"
+  },
+  {
+    "filename": "71_692.jpg",
+    "ground_truth": "đáng",
+    "prediction": "đáng"
+  },
+  {
+    "filename": "69_340.jpg",
+    "ground_truth": "NV1",
+    "prediction": "NVỢ"
+  },
+  {
+    "filename": "57_483.jpg",
+    "ground_truth": "còn",
+    "prediction": "còn"
+  },
+  {
+    "filename": "211_119.jpg",
+    "ground_truth": "điện",
+    "prediction": "điện"
+  },
+  {
+    "filename": "15_117.jpg",
+    "ground_truth": "quán",
+    "prediction": "quán"
+  },
+  {
+    "filename": "23_456.jpg",
+    "ground_truth": "lên",
+    "prediction": "leo\n\nho"
+  },
+  {
+    "filename": "84_78.jpg",
+    "ground_truth": "ăn",
+    "prediction": "án\n\nan"
+  },
+  {
+    "filename": "202_62.jpg",
+    "ground_truth": "sang",
+    "prediction": "sang"
+  },
+  {
+    "filename": "124_402.jpg",
+    "ground_truth": "tại",
+    "prediction": "tại"
+  },
+  {
+    "filename": "141_602.jpg",
+    "ground_truth": "dù",
+    "prediction": "dù"
+  },
+  {
+    "filename": "187_181.jpg",
+    "ground_truth": "sách",
+    "prediction": "sách"
+  },
+  {
+    "filename": "117_446.jpg",
+    "ground_truth": "người",
+    "prediction": "người"
+  },
+  {
+    "filename": "110_29.jpg",
+    "ground_truth": "mộ",
+    "prediction": "một"
+  },
+  {
+    "filename": "177_102.jpg",
+    "ground_truth": "vụ",
+    "prediction": "vụ."
+  },
+  {
+    "filename": "116_148.jpg",
+    "ground_truth": "vang",
+    "prediction": "vàng"
+  },
+  {
+    "filename": "118_129.jpg",
+    "ground_truth": "và",
+    "prediction": "và"
+  },
+  {
+    "filename": "99_48.jpg",
+    "ground_truth": "nào",
+    "prediction": "nào"
+  },
+  {
+    "filename": "172_456.jpg",
+    "ground_truth": "Triều",
+    "prediction": "Trình"
+  },
+  {
+    "filename": "65_33.jpg",
+    "ground_truth": "22",
+    "prediction": "22"
+  },
+  {
+    "filename": "138_140.jpg",
+    "ground_truth": "Huệ",
+    "prediction": "thực"
+  },
+  {
+    "filename": "218_171.jpg",
+    "ground_truth": "hoá",
+    "prediction": "hứa"
+  },
+  {
+    "filename": "6_273.jpg",
+    "ground_truth": "đào",
+    "prediction": "trò"
+  },
+  {
+    "filename": "86_488.jpg",
+    "ground_truth": "một",
+    "prediction": "một"
+  },
+  {
+    "filename": "103_371.jpg",
+    "ground_truth": "tiếng",
+    "prediction": "tiếng ấy"
+  },
+  {
+    "filename": "129_172.jpg",
+    "ground_truth": "kiện",
+    "prediction": "kịchị"
+  },
+  {
+    "filename": "174_248.jpg",
+    "ground_truth": "11",
+    "prediction": "11"
+  },
+  {
+    "filename": "238_58.jpg",
+    "ground_truth": "nhà",
+    "prediction": "nhà"
+  },
+  {
+    "filename": "199_45.jpg",
+    "ground_truth": "đó",
+    "prediction": "đó"
+  },
+  {
+    "filename": "133_14.jpg",
+    "ground_truth": "chai",
+    "prediction": "chủ"
+  },
+  {
+    "filename": "52_361.jpg",
+    "ground_truth": "nơi",
+    "prediction": "nói"
+  },
+  {
+    "filename": "112_13.jpg",
+    "ground_truth": "cái",
+    "prediction": "các"
+  },
+  {
+    "filename": "211_404.jpg",
+    "ground_truth": "số",
+    "prediction": "gồ\n\ngồ"
+  },
+  {
+    "filename": "11_75.jpg",
+    "ground_truth": "kỳ",
+    "prediction": "ký"
+  },
+  {
+    "filename": "148_125.jpg",
+    "ground_truth": "những",
+    "prediction": "những"
+  },
+  {
+    "filename": "109_234.jpg",
+    "ground_truth": "tộc",
+    "prediction": "tộc"
+  },
+  {
+    "filename": "35_136.jpg",
+    "ground_truth": "lẽ",
+    "prediction": "tế"
+  },
+  {
+    "filename": "167_156.jpg",
+    "ground_truth": "sĩ",
+    "prediction": "số vì"
+  },
+  {
+    "filename": "42_17.jpg",
+    "ground_truth": "xử",
+    "prediction": "xú\n\nxứ"
+  },
+  {
+    "filename": "207_359.jpg",
+    "ground_truth": "30",
+    "prediction": "30"
+  },
+  {
+    "filename": "161_32.jpg",
+    "ground_truth": "Khác",
+    "prediction": "Khái"
+  },
+  {
+    "filename": "22_458.jpg",
+    "ground_truth": "nhưng",
+    "prediction": "nhưng"
+  },
+  {
+    "filename": "239_239.jpg",
+    "ground_truth": "bao",
+    "prediction": "bao"
+  },
+  {
+    "filename": "170_372.jpg",
+    "ground_truth": "góp",
+    "prediction": "gón"
+  },
+  {
+    "filename": "213_23.jpg",
+    "ground_truth": "Nam",
+    "prediction": "Nam"
+  },
+  {
+    "filename": "7_118.jpg",
+    "ground_truth": "bán",
+    "prediction": "đối\ntôi"
+  },
+  {
+    "filename": "134_262.jpg",
+    "ground_truth": "sau",
+    "prediction": "khu"
+  },
+  {
+    "filename": "125_198.jpg",
+    "ground_truth": "Khai",
+    "prediction": "Khai"
+  },
+  {
+    "filename": "86_157.jpg",
+    "ground_truth": "huyện",
+    "prediction": "huyện"
+  },
+  {
+    "filename": "82_222.jpg",
+    "ground_truth": "với",
+    "prediction": "với"
+  },
+  {
+    "filename": "243_338.jpg",
+    "ground_truth": "như",
+    "prediction": "nhi'"
+  },
+  {
+    "filename": "135_28.jpg",
+    "ground_truth": "làm",
+    "prediction": "làm"
+  },
+  {
+    "filename": "239_98.jpg",
+    "ground_truth": "dị",
+    "prediction": "đi\n\nđi"
+  },
+  {
+    "filename": "168_317.jpg",
+    "ground_truth": "là",
+    "prediction": "là"
+  },
+  {
+    "filename": "113_106.jpg",
+    "ground_truth": "chủ",
+    "prediction": "chủ"
+  },
+  {
+    "filename": "240_152.jpg",
+    "ground_truth": "Tất",
+    "prediction": "tất\n\ntất"
+  },
+  {
+    "filename": "168_242.jpg",
+    "ground_truth": "đèn",
+    "prediction": "đêm"
+  },
+  {
+    "filename": "133_519.jpg",
+    "ground_truth": "có",
+    "prediction": "có"
+  },
+  {
+    "filename": "120_180.jpg",
+    "ground_truth": "dự",
+    "prediction": "chỉ"
+  },
+  {
+    "filename": "118_570.jpg",
+    "ground_truth": "nhận",
+    "prediction": "nhận"
+  },
+  {
+    "filename": "220_267.jpg",
+    "ground_truth": "qui",
+    "prediction": "gai"
+  },
+  {
+    "filename": "157_12.jpg",
+    "ground_truth": "đất",
+    "prediction": "tất\n\ntất"
+  },
+  {
+    "filename": "5_244.jpg",
+    "ground_truth": "nghị",
+    "prediction": "nghị"
+  },
+  {
+    "filename": "85_353.jpg",
+    "ground_truth": "tuổi",
+    "prediction": "thời\n\ntôi"
+  },
+  {
+    "filename": "172_259.jpg",
+    "ground_truth": "cực",
+    "prediction": "cục"
+  },
+  {
+    "filename": "19_511.jpg",
+    "ground_truth": "cừ",
+    "prediction": "cát"
+  },
+  {
+    "filename": "89_331.jpg",
+    "ground_truth": "xót",
+    "prediction": "xót"
+  },
+  {
+    "filename": "193_5.jpg",
+    "ground_truth": "thực",
+    "prediction": "thực"
+  },
+  {
+    "filename": "103_457.jpg",
+    "ground_truth": "tội",
+    "prediction": "tôi\n\ntôi"
+  },
+  {
+    "filename": "226_300.jpg",
+    "ground_truth": "80",
+    "prediction": "XO"
+  },
+  {
+    "filename": "98_351.jpg",
+    "ground_truth": "bại",
+    "prediction": "bại"
+  },
+  {
+    "filename": "85_401.jpg",
+    "ground_truth": "căn",
+    "prediction": "căn"
+  },
+  {
+    "filename": "182_98.jpg",
+    "ground_truth": "Một",
+    "prediction": "Một"
+  },
+  {
+    "filename": "229_214.jpg",
+    "ground_truth": "Indo",
+    "prediction": "Trên đó"
+  },
+  {
+    "filename": "5_394.jpg",
+    "ground_truth": "để",
+    "prediction": "đổi"
+  },
+  {
+    "filename": "58_202.jpg",
+    "ground_truth": "Tỉnh",
+    "prediction": "Tình"
+  },
+  {
+    "filename": "197_571.jpg",
+    "ground_truth": "không",
+    "prediction": "chàng"
+  },
+  {
+    "filename": "38_269.jpg",
+    "ground_truth": "cạnh",
+    "prediction": "cạnh"
+  },
+  {
+    "filename": "170_543.jpg",
+    "ground_truth": "Phước",
+    "prediction": "Phước"
+  },
+  {
+    "filename": "216_576.jpg",
+    "ground_truth": "đường",
+    "prediction": "đường"
+  },
+  {
+    "filename": "95_377.jpg",
+    "ground_truth": "tư",
+    "prediction": "trở"
+  },
+  {
+    "filename": "105_120.jpg",
+    "ground_truth": "sau",
+    "prediction": "Khu\n\nKhu"
+  },
+  {
+    "filename": "105_92.jpg",
+    "ground_truth": "đi",
+    "prediction": "ýi"
+  },
+  {
+    "filename": "67_79.jpg",
+    "ground_truth": "trại",
+    "prediction": "trại"
+  },
+  {
+    "filename": "105_195.jpg",
+    "ground_truth": "cạnh",
+    "prediction": "cạnh"
+  },
+  {
+    "filename": "175_467.jpg",
+    "ground_truth": "ương",
+    "prediction": "Vòng"
+  },
+  {
+    "filename": "213_33.jpg",
+    "ground_truth": "260",
+    "prediction": "260"
+  },
+  {
+    "filename": "12_344.jpg",
+    "ground_truth": "từ",
+    "prediction": "thì\n\nthì"
+  },
+  {
+    "filename": "209_215.jpg",
+    "ground_truth": "đường",
+    "prediction": "đường"
+  },
+  {
+    "filename": "146_10.jpg",
+    "ground_truth": "giáp",
+    "prediction": "giáp"
+  },
+  {
+    "filename": "120_962.jpg",
+    "ground_truth": "mình",
+    "prediction": "mình vì"
+  },
+  {
+    "filename": "220_225.jpg",
+    "ground_truth": "theo",
+    "prediction": "theo"
+  },
+  {
+    "filename": "179_535.jpg",
+    "ground_truth": "của",
+    "prediction": "của"
+  },
+  {
+    "filename": "18_379.jpg",
+    "ground_truth": "giữa",
+    "prediction": "giữa"
+  },
+  {
+    "filename": "42_282.jpg",
+    "ground_truth": "tư",
+    "prediction": "tư"
+  },
+  {
+    "filename": "187_179.jpg",
+    "ground_truth": "Nhiều",
+    "prediction": "Như vì"
+  },
+  {
+    "filename": "38_474.jpg",
+    "ground_truth": "là",
+    "prediction": "lời"
+  },
+  {
+    "filename": "110_582.jpg",
+    "ground_truth": "lũ",
+    "prediction": "lũ"
+  },
+  {
+    "filename": "205_109.jpg",
+    "ground_truth": "trai",
+    "prediction": "trái"
+  },
+  {
+    "filename": "225_80.jpg",
+    "ground_truth": "lãi",
+    "prediction": "lái"
+  },
+  {
+    "filename": "5_84.jpg",
+    "ground_truth": "Hải",
+    "prediction": "tài\n\ntài"
+  },
+  {
+    "filename": "197_468.jpg",
+    "ground_truth": "dư",
+    "prediction": "chỉ"
+  },
+  {
+    "filename": "163_59.jpg",
+    "ground_truth": "Theo",
+    "prediction": "Theo"
+  },
+  {
+    "filename": "187_254.jpg",
+    "ground_truth": "trương",
+    "prediction": "-Trường"
+  },
+  {
+    "filename": "184_129.jpg",
+    "ground_truth": "việc",
+    "prediction": "làm"
+  },
+  {
+    "filename": "34_825.jpg",
+    "ground_truth": "Đối",
+    "prediction": "thời"
+  },
+  {
+    "filename": "47_247.jpg",
+    "ground_truth": "án",
+    "prediction": "án"
+  },
+  {
+    "filename": "120_657.jpg",
+    "ground_truth": "thực",
+    "prediction": "thực"
+  },
+  {
+    "filename": "103_183.jpg",
+    "ground_truth": "ông",
+    "prediction": "ông"
+  },
+  {
+    "filename": "138_207.jpg",
+    "ground_truth": "Còi",
+    "prediction": "Cói"
+  },
+  {
+    "filename": "5_161.jpg",
+    "ground_truth": "ba",
+    "prediction": "ba"
+  },
+  {
+    "filename": "229_497.jpg",
+    "ground_truth": "cảnh",
+    "prediction": "dành"
+  },
+  {
+    "filename": "154_269.jpg",
+    "ground_truth": "kể",
+    "prediction": "kế"
+  },
+  {
+    "filename": "110_662.jpg",
+    "ground_truth": "chương",
+    "prediction": "chương"
+  },
+  {
+    "filename": "36_237.jpg",
+    "ground_truth": "xây",
+    "prediction": "xay"
+  },
+  {
+    "filename": "166_112.jpg",
+    "ground_truth": "thiệt",
+    "prediction": "thiệt\n\nthật"
+  },
+  {
+    "filename": "87_251.jpg",
+    "ground_truth": "đã",
+    "prediction": "đã"
+  },
+  {
+    "filename": "35_316.jpg",
+    "ground_truth": "mùa",
+    "prediction": "mùa"
+  },
+  {
+    "filename": "48_128.jpg",
+    "ground_truth": "nước",
+    "prediction": "nuôi\n\nnuôi"
+  },
+  {
+    "filename": "12_176.jpg",
+    "ground_truth": "chiến",
+    "prediction": "chiến\n\nchiến"
+  },
+  {
+    "filename": "2_112.jpg",
+    "ground_truth": "tiêu",
+    "prediction": "Hòa\n\nHình"
+  },
+  {
+    "filename": "140_36.jpg",
+    "ground_truth": "Sanofi",
+    "prediction": "Sinh\nSinh"
+  },
+  {
+    "filename": "4_128.jpg",
+    "ground_truth": "Muốn",
+    "prediction": "Nhân"
+  },
+  {
+    "filename": "56_173.jpg",
+    "ground_truth": "biết",
+    "prediction": "biết"
+  },
+  {
+    "filename": "111_301.jpg",
+    "ground_truth": "máu",
+    "prediction": "máu"
+  },
+  {
+    "filename": "146_120.jpg",
+    "ground_truth": "thành",
+    "prediction": "thành"
+  },
+  {
+    "filename": "84_87.jpg",
+    "ground_truth": "nhận",
+    "prediction": "nhận"
+  },
+  {
+    "filename": "117_619.jpg",
+    "ground_truth": "biết",
+    "prediction": "luật\n\nluật"
+  },
+  {
+    "filename": "44_162.jpg",
+    "ground_truth": "lên",
+    "prediction": "lên\n\nlên"
+  },
+  {
+    "filename": "88_232.jpg",
+    "ground_truth": "tử",
+    "prediction": "tôi\n\ntôi"
+  },
+  {
+    "filename": "125_185.jpg",
+    "ground_truth": "bảo",
+    "prediction": "bảo\n\nbảo"
+  },
+  {
+    "filename": "106_137.jpg",
+    "ground_truth": "Công",
+    "prediction": "công"
+  },
+  {
+    "filename": "63_492.jpg",
+    "ground_truth": "cộng",
+    "prediction": "công"
+  },
+  {
+    "filename": "133_339.jpg",
+    "ground_truth": "hai",
+    "prediction": "hai"
+  },
+  {
+    "filename": "229_393.jpg",
+    "ground_truth": "lao",
+    "prediction": "bao"
+  },
+  {
+    "filename": "54_2.jpg",
+    "ground_truth": "thật",
+    "prediction": "thật"
+  },
+  {
+    "filename": "27_135.jpg",
+    "ground_truth": "một",
+    "prediction": "một"
+  },
+  {
+    "filename": "234_83.jpg",
+    "ground_truth": "nguyên",
+    "prediction": "nguyên"
+  },
+  {
+    "filename": "174_227.jpg",
+    "ground_truth": "lôi",
+    "prediction": "cho"
+  },
+  {
+    "filename": "248_271.jpg",
+    "ground_truth": "dưỡng",
+    "prediction": "dưỡng"
+  },
+  {
+    "filename": "216_304.jpg",
+    "ground_truth": "có",
+    "prediction": "có"
+  },
+  {
+    "filename": "134_125.jpg",
+    "ground_truth": "lao",
+    "prediction": "lao\n\nlao"
+  },
+  {
+    "filename": "145_533.jpg",
+    "ground_truth": "xe",
+    "prediction": "xe\n\nxe"
+  },
+  {
+    "filename": "84_320.jpg",
+    "ground_truth": "TP",
+    "prediction": "TT"
+  },
+  {
+    "filename": "178_257.jpg",
+    "ground_truth": "bị",
+    "prediction": "bị\n\nbị"
+  },
+  {
+    "filename": "159_395.jpg",
+    "ground_truth": "biết",
+    "prediction": "bước"
+  },
+  {
+    "filename": "110_503.jpg",
+    "ground_truth": "sống",
+    "prediction": "sống"
+  },
+  {
+    "filename": "199_367.jpg",
+    "ground_truth": "trì",
+    "prediction": "tôi"
+  },
+  {
+    "filename": "73_82.jpg",
+    "ground_truth": "phong",
+    "prediction": "phương"
+  },
+  {
+    "filename": "99_43.jpg",
+    "ground_truth": "nhưng",
+    "prediction": "nhưng"
+  },
+  {
+    "filename": "74_386.jpg",
+    "ground_truth": "bè",
+    "prediction": "bé"
+  },
+  {
+    "filename": "29_157.jpg",
+    "ground_truth": "đã",
+    "prediction": "đã"
+  },
+  {
+    "filename": "164_91.jpg",
+    "ground_truth": "được",
+    "prediction": "được"
+  },
+  {
+    "filename": "36_7.jpg",
+    "ground_truth": "NAM",
+    "prediction": "NĂM"
+  },
+  {
+    "filename": "50_33.jpg",
+    "ground_truth": "hơi",
+    "prediction": "hỏi"
+  },
+  {
+    "filename": "174_564.jpg",
+    "ground_truth": "nơi",
+    "prediction": "mới"
+  },
+  {
+    "filename": "18_649.jpg",
+    "ground_truth": "tháng",
+    "prediction": "tháng"
+  },
+  {
+    "filename": "213_86.jpg",
+    "ground_truth": "1",
+    "prediction": "triệu"
+  },
+  {
+    "filename": "183_138.jpg",
+    "ground_truth": "tra",
+    "prediction": "tra\n\ntra"
+  },
+  {
+    "filename": "101_94.jpg",
+    "ground_truth": "Bỗng",
+    "prediction": "Bông"
+  },
+  {
+    "filename": "222_48.jpg",
+    "ground_truth": "nghị",
+    "prediction": "nghị"
+  },
+  {
+    "filename": "211_169.jpg",
+    "ground_truth": "Trong",
+    "prediction": "Trong"
+  },
+  {
+    "filename": "55_486.jpg",
+    "ground_truth": "An",
+    "prediction": "xin\n\nAn"
+  },
+  {
+    "filename": "124_417.jpg",
+    "ground_truth": "cơm",
+    "prediction": "còn\n\ncòn"
+  },
+  {
+    "filename": "230_209.jpg",
+    "ground_truth": "gặp",
+    "prediction": "gặp"
+  },
+  {
+    "filename": "147_50.jpg",
+    "ground_truth": "đột",
+    "prediction": "địa"
+  },
+  {
+    "filename": "64_2.jpg",
+    "ground_truth": "nghị",
+    "prediction": "nghị"
+  },
+  {
+    "filename": "246_59.jpg",
+    "ground_truth": "cuống",
+    "prediction": "cuồng"
+  },
+  {
+    "filename": "224_65.jpg",
+    "ground_truth": "Một",
+    "prediction": "một"
+  },
+  {
+    "filename": "145_591.jpg",
+    "ground_truth": "quá",
+    "prediction": "quá"
+  },
+  {
+    "filename": "98_52.jpg",
+    "ground_truth": "thành",
+    "prediction": "thành"
+  },
+  {
+    "filename": "181_62.jpg",
+    "ground_truth": "này",
+    "prediction": "mấy"
+  },
+  {
+    "filename": "206_8.jpg",
+    "ground_truth": "khai",
+    "prediction": "khai"
+  },
+  {
+    "filename": "143_69.jpg",
+    "ground_truth": "cá",
+    "prediction": "cá"
+  },
+  {
+    "filename": "96_172.jpg",
+    "ground_truth": "đoán",
+    "prediction": "đoàn"
+  },
+  {
+    "filename": "56_21.jpg",
+    "ground_truth": "Bình",
+    "prediction": "Bình"
+  },
+  {
+    "filename": "148_508.jpg",
+    "ground_truth": "đây",
+    "prediction": "đây"
+  },
+  {
+    "filename": "197_680.jpg",
+    "ground_truth": "không",
+    "prediction": "không"
+  },
+  {
+    "filename": "47_364.jpg",
+    "ground_truth": "lời",
+    "prediction": "tôi"
+  },
+  {
+    "filename": "107_230.jpg",
+    "ground_truth": "lập",
+    "prediction": "lập"
+  },
+  {
+    "filename": "234_102.jpg",
+    "ground_truth": "Tốc",
+    "prediction": "Cốc"
+  },
+  {
+    "filename": "35_286.jpg",
+    "ground_truth": "nghị",
+    "prediction": "nghị"
+  },
+  {
+    "filename": "122_515.jpg",
+    "ground_truth": "Hạt",
+    "prediction": "thật"
+  },
+  {
+    "filename": "142_576.jpg",
+    "ground_truth": "trận",
+    "prediction": "điện"
+  },
+  {
+    "filename": "2_83.jpg",
+    "ground_truth": "vui",
+    "prediction": "vui"
+  },
+  {
+    "filename": "220_28.jpg",
+    "ground_truth": "đất",
+    "prediction": "đất"
+  },
+  {
+    "filename": "35_304.jpg",
+    "ground_truth": "bé",
+    "prediction": "bé\n\nbé"
+  },
+  {
+    "filename": "25_366.jpg",
+    "ground_truth": "mới",
+    "prediction": "mỗi"
+  },
+  {
+    "filename": "146_19.jpg",
+    "ground_truth": "Nam",
+    "prediction": "Nam"
+  },
+  {
+    "filename": "70_342.jpg",
+    "ground_truth": "làm",
+    "prediction": "làm"
+  },
+  {
+    "filename": "84_143.jpg",
+    "ground_truth": "những",
+    "prediction": "những"
+  },
+  {
+    "filename": "130_549.jpg",
+    "ground_truth": "bị",
+    "prediction": "bị\n\nbị"
+  },
+  {
+    "filename": "38_56.jpg",
+    "ground_truth": "như",
+    "prediction": "như"
+  },
+  {
+    "filename": "229_182.jpg",
+    "ground_truth": "trên",
+    "prediction": "trên"
+  },
+  {
+    "filename": "117_396.jpg",
+    "ground_truth": "Vẫn",
+    "prediction": "vẫn"
+  },
+  {
+    "filename": "243_523.jpg",
+    "ground_truth": "biến",
+    "prediction": "biển"
+  },
+  {
+    "filename": "215_464.jpg",
+    "ground_truth": "nghèo",
+    "prediction": "nghèo"
+  },
+  {
+    "filename": "117_499.jpg",
+    "ground_truth": "Ngọ",
+    "prediction": "Ngọ"
+  },
+  {
+    "filename": "243_632.jpg",
+    "ground_truth": "giang",
+    "prediction": "gang"
+  },
+  {
+    "filename": "158_140.jpg",
+    "ground_truth": "giới",
+    "prediction": "giới"
+  },
+  {
+    "filename": "59_114.jpg",
+    "ground_truth": "tại",
+    "prediction": "tại"
+  },
+  {
+    "filename": "73_389.jpg",
+    "ground_truth": "văn",
+    "prediction": "vẫn"
+  },
+  {
+    "filename": "12_348.jpg",
+    "ground_truth": "bày",
+    "prediction": "bây"
+  }
+]

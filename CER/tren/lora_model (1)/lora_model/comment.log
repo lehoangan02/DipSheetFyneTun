@@ -1,0 +1,41 @@
+Step 100:
+Successfully saved predictions to val_predictions.json
+		------------------------------
+		Character Error Rate (CER): 0.4452
+		Word Error Rate (WER):      0.7017
+		Accuracy (1 - CER):         0.5548
+Step 1200:
+Successfully saved predictions to val_predictions.json
+------------------------------
+Character Error Rate (CER): 0.3263
+Word Error Rate (WER):      0.4905
+Accuracy (1 - CER):         0.6737
+------------------------------
+Step 600:
+Successfully saved predictions to val_predictions.json
+------------------------------
+Character Error Rate (CER): 0.4835
+Word Error Rate (WER):      0.6346
+Accuracy (1 - CER):         0.5165
+------------------------------
+Step 900:
+Successfully saved predictions to val_predictions.json
+------------------------------
+Character Error Rate (CER): 0.4547
+Word Error Rate (WER):      0.5826
+Accuracy (1 - CER):         0.5453
+------------------------------
+Step 2500:
+Successfully saved predictions to val_predictions.json
+------------------------------
+Character Error Rate (CER): 0.2134
+Word Error Rate (WER):      0.3784
+Accuracy (1 - CER):         0.7866
+------------------------------
+Step 2600:
+Successfully saved predictions to val_predictions.json
+------------------------------
+Character Error Rate (CER): 0.2051
+Word Error Rate (WER):      0.3664
+Accuracy (1 - CER):         0.7949
+------------------------------
