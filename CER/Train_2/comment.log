@@ -1,0 +1,6 @@
+instruction = "<image>\nTranscribe the Vietnamese text in the image."
+(myenv) lehoangan@MacbukEir Train_2 % python CER_calc_lora.py 
+Total characters: 3365
+Total edits: 589
+CER: 0.1750
+(myenv) lehoangan@MacbukEir Train_2 % 

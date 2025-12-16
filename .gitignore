@@ -222,3 +222,5 @@ dataset.zip
 *.zip
 /UIT_HWDB_word
 /UIT_HWDB_word_clean
+CER/.DS_Store
+CER/Train_1/.DS_Store

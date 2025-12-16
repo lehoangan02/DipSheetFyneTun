@@ -1,0 +1,7 @@
+2500 of 7999
+prompt = "<image>\nFree OCR. "
+(myenv) lehoangan@MacbukEir Train_1 % python CER_calc_lora.py 
+Total characters: 3365
+Total edits: 538
+CER: 0.1599
+(myenv) lehoangan@MacbukEir Train_1 % 
